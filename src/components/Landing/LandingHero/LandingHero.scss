@@ -1,0 +1,39 @@
+@import '../../../variables';
+
+.landing-hero-container {
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient($primary-dark, $primary);
+
+    .content {
+        width: 1110px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .left {
+            width: 600px;
+            font-size: 52px;
+            color: $text-color;
+        }
+
+        .right {
+            display: flex;
+            font-size: 28px;
+            text-decoration: none;
+            color: $text-color;
+
+            .hatch {
+                margin-left: 8px;
+                font-family: 'Righteous', cursive;
+            }
+
+            .image {
+                height: 28px;
+                margin-left: 6px;
+            }
+        }
+    }
+}
