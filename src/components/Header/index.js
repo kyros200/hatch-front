@@ -10,9 +10,7 @@ const Header = () => {
                 </Link>
                 <div className='buttons'>
                     <Link to="/error">DevLog</Link>
-                    <Link to="/error">Games</Link>
-                    <Link to="/error">Unity</Link>
-                    <Link to="/error">React</Link>
+                    <Link to="/error">Projects</Link>
                 </div>
             </div>
         </div>
