@@ -10,7 +10,8 @@ const LandingHero = () => {
         "All the news about everything I do.",
         "Everything you see here is made by me. This is who I am.",
         "This site is made by me for you. Check out what I have to say.",
-        "This is a site telling why I make sites."
+        "This is a site telling why I make sites.",
+        "No images, just you and my ideas."
     ]
     
     return (
@@ -24,6 +25,9 @@ const LandingHero = () => {
                     <img className='image' src={rightArrow} alt="Arrow" />
                 </Link>
             </div>
+            <Link className='what-is' to="/about">
+                What is Hatch?
+            </Link>
         </div>
     )
 }

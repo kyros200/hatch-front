@@ -32,7 +32,8 @@ ReactDOM.render(
           <Route path="/" element={<PageLayout />}>
             <Route index element={<Landing />} />
             <Route path="error" element={<Error />} />
-            {/* <Route path="games" element={<Games />} /> */}
+            <Route path="me" element={<>About Me</>} />
+            <Route path="about" element={<>About Hatch</>} />
           </Route>
         </Routes> 
       </BrowserRouter>

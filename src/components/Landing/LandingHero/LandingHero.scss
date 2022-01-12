@@ -1,7 +1,9 @@
 @import '../../../variables';
 
 .landing-hero-container {
+    position: relative;
     height: 400px;
+    margin-bottom: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,5 +37,16 @@
                 margin-left: 6px;
             }
         }
+    }
+
+    .what-is {
+        position: absolute;
+        font-size: 28px;
+        padding: 8px 12px;
+        background-color: white;
+        box-shadow: 5px 5px 9px black;
+        border-radius: 12px;
+        top: 100%;
+        transform: translateY(-50%);
     }
 }
