@@ -1,14 +1,11 @@
 @import '../../../variables';
 
-.landing-games-container {
+.entries-content {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $background-section;
+    justify-content: space-around;
+    flex-wrap: wrap;
 
-    .content {
-        width: 1110px;
-        display: flex;
-        flex-direction: column;
+    .card {
+        margin-bottom: 12px;
     }
 }

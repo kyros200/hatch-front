@@ -1,21 +1,27 @@
 import Link from '../Link'
 import './Section.scss';
 
-const Section = (props) => {
+const Section = ({ children, headerText, headerLine = true, to, footerText, footerLine = true, backgroundColor = "#eeffee"}) => {
     return (
-        <div className='section-container'>
+        <div className='section-container' style={{backgroundColor}}>
             <div className='content'>
                 <div className='header'>
-                    {props.headerText}
+                    {headerText}
+                    {headerLine ?
                     <div className='line' />
+                    : <></>
+                    }
                 </div>
-                {props.children}
-                {props.to && props.footerText ? 
+                {children}
+                {to && footerText ? 
                     <div className='footer'>
-                        <Link className="bold" to ={props.to}>
-                            {props.footerText}
+                        <Link className="bold" to={to}>
+                            {footerText}
                         </Link> 
+                        {footerLine ?
                         <div className='line' />
+                        : <></>
+                        }   
                     </div>
                 : <></>}
             </div>
