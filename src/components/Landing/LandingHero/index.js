@@ -1,4 +1,5 @@
 import Link from '../../shared/Link'
+import Hatch from '../../shared/Hatch'
 import rightArrow from '../../../images/right-arrow.svg';
 import './LandingHero.scss';
 
@@ -20,14 +21,17 @@ const LandingHero = () => {
                 <div className='left'>
                     {listTexts[Math.floor(Math.random() * listTexts.length)]}
                 </div>
-                <Link className='right' to="/me">
-                    About me
-                    <img className='image' src={rightArrow} alt="Arrow" />
-                </Link>
+                <div className='right' to="/me">
+                    <Link className='main-link' to="/me">
+                        About me
+                        <img className='image' src={rightArrow} alt="Arrow" />
+                    </Link>
+                    <Link className='main-link' to="/about">
+                        What is <Hatch />?
+                        <img className='image' src={rightArrow} alt="Arrow" />
+                    </Link>
+                </div>
             </div>
-            <Link className='what-is' to="/about">
-                What is Hatch?
-            </Link>
         </div>
     )
 }

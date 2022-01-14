@@ -1,4 +1,5 @@
 import Section from '../../shared/Section'
+import Card from '../../shared/Card'
 import './LandingGames.scss';
 
 const LandingGames = () => {
@@ -9,21 +10,28 @@ const LandingGames = () => {
             footerText={`See all beaten games`}
         >
             <div className='cards-container'>
-                <div className='card'>
+                <Card>
                     Game
-                </div>
-                <div className='card'>
+                </Card>
+                <Card
+                backgroundColor={"purple"}>
                     Game
-                </div>
-                <div className='card'>
+                </Card>
+                <Card
+                    backgroundColor={"yellow"}
+                    color="black"
+                    to="/error"
+                >
                     Game
-                </div>
-                <div className='card'>
+                </Card>
+                <Card
+                backgroundColor={"brown"}>
                     Game
-                </div>
-                <div className='card'>
+                </Card>
+                <Card
+                backgroundColor={"pink"}>
                     Game
-                </div>
+                </Card>
             </div>
         </Section>
     )
