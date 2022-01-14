@@ -27,7 +27,7 @@ const LandingHero = () => {
                         <img className='image' src={rightArrow} alt="Arrow" />
                     </Link>
                     <Link className='main-link' to="/about">
-                        What is <Hatch />?
+                        About <Hatch />
                         <img className='image' src={rightArrow} alt="Arrow" />
                     </Link>
                 </div>
