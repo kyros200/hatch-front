@@ -21,7 +21,7 @@ const LandingGames = () => {
                     image='https://upload.wikimedia.org/wikipedia/pt/3/31/Mischief_Makers.jpg'
                 />
                 <CardGame
-                    name={"Tokyo Mira Session #FE"}
+                    name={"Tokyo Mirage Session #FE"}
                     console={"wiiu"}
                     image='https://cdn02.nintendo-europe.com/media/images/10_share_images/games_15/wiiu_14/SI_WiiU_TokyoMirageSessionsFE_image1600w.jpg'
                 />
@@ -33,6 +33,11 @@ const LandingGames = () => {
                 <CardGame
                     name={"Oreshika: Tainted Bloodlines"}
                     console={"psv"}
+                    image='https://upload.wikimedia.org/wikipedia/en/f/fb/OreShika2_cover.jpg'
+                />
+                <CardGame
+                    name={"Fire Emblem Warriors"}
+                    console={"switch"}
                     image='https://upload.wikimedia.org/wikipedia/en/f/fb/OreShika2_cover.jpg'
                 />
             </div>

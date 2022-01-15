@@ -3,9 +3,9 @@ import './Logo.scss'
 import logoGC from '../../../images/logo_GC_w.svg'
 import logoN64 from '../../../images/logo_n64_w.svg'
 import logoWiiU from '../../../images/logo_wiiu_w.svg'
-import logoSwitch from '../../../images/logo_ns.svg'
-import logoPs4 from '../../../images/logo_ps4_b.svg'
-import logoPsv from '../../../images/logo_psv_b.svg'
+import logoSwitch from '../../../images/logo_ns_w.svg'
+import logoPs4 from '../../../images/logo_ps4_w.svg'
+import logoPsv from '../../../images/logo_psv_w.svg'
 
 const logoConsoles = {
     // ds:,
