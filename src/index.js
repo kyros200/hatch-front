@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Landing from './components/Landing';
+import Entries from './components/Entries';
 import Error from './components/Error';
 import PageLayout from './components/PageLayout';
 import { ToastContainer } from 'react-toastify';
@@ -31,6 +32,7 @@ ReactDOM.render(
         <Routes>
           <Route path="/" element={<PageLayout />}>
             <Route index element={<Landing />} />
+            <Route path="entries" element={<Entries />} />
             <Route path="error" element={<Error />} />
             <Route path="me" element={<>About Me</>} />
             <Route path="about" element={<>About Hatch</>} />

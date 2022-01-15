@@ -15,7 +15,7 @@ const LandingEntries = () => {
             backgroundColor='white'
             headerText={`Recent Entries`}
             headerLine={false}
-            to={`/error`}
+            to={`/entries`}
             footerText={`See all entries`}
             footerLine={false}
         >
