@@ -1,50 +1,20 @@
 @import '../../../variables';
 
-.landing-hero-container {
-    position: relative;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: linear-gradient($primary-dark, $primary);
+.main-link {
+    font-size: 28px;
+    text-decoration: none;
+    color: $text-color;
 
-    .content {
-        width: 1110px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    &:first-child {
+        margin-bottom: 16px;
+    }
 
-        .left {
-            width: 600px;
-            font-size: 52px;
-            color: $text-color;
-        }
+    .hatch {
+        font-family: 'Righteous', cursive;
+    }
 
-        .right {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-
-            
-            .main-link {
-                font-size: 28px;
-                text-decoration: none;
-                color: $text-color;
-
-                &:first-child {
-                    margin-bottom: 16px;
-                }
-
-                .hatch {
-                    font-family: 'Righteous', cursive;
-                }
-
-                .image {
-                    height: 28px;
-                    margin-left: 6px;
-                }
-            }
-
-        }
+    .image {
+        height: 28px;
+        margin-left: 6px;
     }
 }

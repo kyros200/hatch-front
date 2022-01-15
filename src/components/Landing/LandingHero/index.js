@@ -1,5 +1,6 @@
 import Link from '../../shared/Link'
 import Hatch from '../../shared/Hatch'
+import Hero from '../../shared/Hero'
 import rightArrow from '../../../images/right-arrow.svg';
 import './LandingHero.scss';
 
@@ -16,23 +17,18 @@ const LandingHero = () => {
     ]
     
     return (
-        <div className='landing-hero-container'>
-            <div className='content'>
-                <div className='left'>
-                    {listTexts[Math.floor(Math.random() * listTexts.length)]}
-                </div>
-                <div className='right' to="/me">
-                    <Link className='main-link' to="/me">
-                        About me
-                        <img className='image' src={rightArrow} alt="Arrow" />
-                    </Link>
-                    <Link className='main-link' to="/about">
-                        About <Hatch />
-                        <img className='image' src={rightArrow} alt="Arrow" />
-                    </Link>
-                </div>
-            </div>
-        </div>
+        <Hero
+            mainText={listTexts[Math.floor(Math.random() * listTexts.length)]}
+        >
+            <Link className='main-link' to="/me">
+                About me
+                <img className='image' src={rightArrow} alt="Arrow" />
+            </Link>
+            <Link className='main-link' to="/about">
+                About <Hatch />
+                <img className='image' src={rightArrow} alt="Arrow" />
+            </Link>
+        </Hero>
     )
 }
 
