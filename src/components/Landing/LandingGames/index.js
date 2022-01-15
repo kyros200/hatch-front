@@ -17,22 +17,22 @@ const LandingGames = () => {
                 />
                 <CardGame
                     name={"The Legend of Zelda: Twilight Princess"}
-                    console={"gc"}
+                    console={"n64"}
                     background='url(https://m.media-amazon.com/images/I/51-sTAVzeFL._AC_.jpg)'
                 />
                 <CardGame
                     name={"Tales of Symphonia"}
-                    console={"gc"}
+                    console={"wiiu"}
                     background='url(https://upload.wikimedia.org/wikipedia/en/6/6d/Tales_of_Symphonia_case_cover.jpg)'
                 />
                 <CardGame
                     name={"The Legend of Zelda: Twilight Princess"}
-                    console={"gc"}
+                    console={"ps4"}
                     background='url(https://m.media-amazon.com/images/I/51-sTAVzeFL._AC_.jpg)'
                 />
                 <CardGame
                     name={"Tales of Symphonia"}
-                    console={"gc"}
+                    console={"psv"}
                     background='url(https://upload.wikimedia.org/wikipedia/en/6/6d/Tales_of_Symphonia_case_cover.jpg)'
                 />
             </div>
