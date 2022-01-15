@@ -13,27 +13,27 @@ const LandingGames = () => {
                 <CardGame
                     name={"Tales of Symphonia"}
                     console={"gc"}
-                    background='url(https://upload.wikimedia.org/wikipedia/en/6/6d/Tales_of_Symphonia_case_cover.jpg)'
+                    image='https://upload.wikimedia.org/wikipedia/en/6/6d/Tales_of_Symphonia_case_cover.jpg'
                 />
                 <CardGame
-                    name={"The Legend of Zelda: Twilight Princess"}
+                    name={"Mischief Makers"}
                     console={"n64"}
-                    background='url(https://m.media-amazon.com/images/I/51-sTAVzeFL._AC_.jpg)'
+                    image='https://upload.wikimedia.org/wikipedia/pt/3/31/Mischief_Makers.jpg'
                 />
                 <CardGame
-                    name={"Tales of Symphonia"}
+                    name={"Tokyo Mira Session #FE"}
                     console={"wiiu"}
-                    background='url(https://upload.wikimedia.org/wikipedia/en/6/6d/Tales_of_Symphonia_case_cover.jpg)'
+                    image='https://cdn02.nintendo-europe.com/media/images/10_share_images/games_15/wiiu_14/SI_WiiU_TokyoMirageSessionsFE_image1600w.jpg'
                 />
                 <CardGame
-                    name={"The Legend of Zelda: Twilight Princess"}
+                    name={"The Last of Us"}
                     console={"ps4"}
-                    background='url(https://m.media-amazon.com/images/I/51-sTAVzeFL._AC_.jpg)'
+                    image='https://upload.wikimedia.org/wikipedia/pt/thumb/b/be/The_Last_of_Us_capa.png/275px-The_Last_of_Us_capa.png'
                 />
                 <CardGame
-                    name={"Tales of Symphonia"}
+                    name={"Oreshika: Tainted Bloodlines"}
                     console={"psv"}
-                    background='url(https://upload.wikimedia.org/wikipedia/en/6/6d/Tales_of_Symphonia_case_cover.jpg)'
+                    image='https://upload.wikimedia.org/wikipedia/en/f/fb/OreShika2_cover.jpg'
                 />
             </div>
         </Section>
