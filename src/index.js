@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Landing from './components/Landing';
-import Entries from './components/Entries';
-import Error from './components/Error';
-import PageLayout from './components/PageLayout';
+import Landing from './pages/Landing';
+import Entries from './pages/Entries';
+import Error from './pages/Error';
+import PageLayout from './layouts/PageLayout';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {

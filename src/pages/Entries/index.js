@@ -1,7 +1,7 @@
-import Hero from '../shared/Hero'
-import Section from '../shared/Section'
-import CardEntry from '../shared/CardEntry'
-import Input from '../shared/Input'
+import Hero from '../../components/shared/Hero'
+import Section from '../../components/shared/Section'
+import CardEntry from '../../components/shared/CardEntry'
+import Input from '../../components/shared/Input'
 import './Entries.scss'
 
 const Entries = () => {

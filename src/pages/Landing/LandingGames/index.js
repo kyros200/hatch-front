@@ -1,5 +1,5 @@
-import Section from '../../shared/Section'
-import CardGame from '../../shared/CardGame'
+import Section from '../../../components/shared/Section'
+import CardGame from '../../../components/shared/CardGame'
 import './LandingGames.scss';
 
 const LandingGames = () => {
