@@ -1,9 +1,9 @@
 import Link from '../Link'
 import './Section.scss';
 
-const Section = ({ children, headerText, headerLine = true, to, footerText, footerLine = true, backgroundColor = "#eeffee"}) => {
+const Section = ({ children, headerText, headerLine = false, to, footerText, footerLine = false, backgroundColor = "#eeffee", className}) => {
     return (
-        <div className='section-container' style={{backgroundColor}}>
+        <div className={`section-container ${className}`} style={{backgroundColor}}>
             <div className='content'>
                 <div className='header'>
                     {headerText}
