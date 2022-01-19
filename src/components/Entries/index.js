@@ -42,7 +42,7 @@ const Entries = () => {
                 </div>
             </Section>
             <Section
-                headerText={`Search`}
+                headerText={`Search Entries`}
             >
                 <div className='search-container'>
                     <div className='inputs'>

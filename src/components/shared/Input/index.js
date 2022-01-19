@@ -1,7 +1,7 @@
 import InputMask from 'react-input-mask';
 import './Input.scss'
 
-const Input = ({ label = "Label", onChange = ()=>{}, type = "free", ...rest }) => {
+const Input = ({id="aaa", label = "Label", onChange = ()=>{}, type = "free", ...rest }) => {
 
     const handleOnChange = (e) => {
         if(type === "text") {
@@ -17,17 +17,17 @@ const Input = ({ label = "Label", onChange = ()=>{}, type = "free", ...rest }) =
         switch(type) {
             case "text": 
             case "number": 
-                return <InputMask id="aaa" onChange={handleOnChange} {...rest}/>
+                return <InputMask id={id} onChange={handleOnChange} {...rest}/>
             case "date": 
-                return <InputMask id="aaa" onChange={handleOnChange} formatChars={{"1": "[0-1]","2": "[1-2]","3": "[0-3]", "X": "[0-9]"}} mask="2XXX-1X-3X" maskChar=" " alwaysShowMask={false}  {...rest}/>
+                return <InputMask id={id} onChange={handleOnChange} formatChars={{"1": "[0-1]","2": "[1-2]","3": "[0-3]", "X": "[0-9]"}} mask="2XXX-1X-3X" maskChar=" " alwaysShowMask={false}  {...rest}/>
             default:
-                return <InputMask id="aaa" onChange={handleOnChange} {...rest}/>
+                return <InputMask id={id} onChange={handleOnChange} {...rest}/>
         }
     }
 
     return (
         <div className='input'>
-            <label for="aaa">{label}</label>
+            <label for={id}>{label}</label>
             {renderInput()}
         </div>
     )
