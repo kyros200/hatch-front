@@ -1,10 +1,10 @@
 import {Link as L} from 'react-router-dom'
 import './Link.scss';
 
-const Link = (props) => {
+const Link = ({ children, className, to, ...rest}) => {
     return (
-        <L className={`link ${props.className}`} to={props.to}>
-            {props.children}
+        <L className={`link ${className}`} to={to} {...rest}>
+            {children}
         </L>
     )
 }
