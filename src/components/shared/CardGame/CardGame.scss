@@ -21,6 +21,7 @@
     }
 
     .logo {
+        background-color: rgba(0, 0, 0, 0.4);
         z-index: 2;
     }
 
@@ -31,5 +32,11 @@
         padding: 12px;
         background-color: rgba(0, 0, 0, 0.4);
         font-weight: 700;
+    }
+
+    &:hover {
+        .text, .logo {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
     }
 }
