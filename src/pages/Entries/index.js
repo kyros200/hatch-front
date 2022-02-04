@@ -3,6 +3,7 @@ import Section from '../../components/shared/Section'
 import CardEntry from '../../components/shared/CardEntry'
 import Input from '../../components/shared/Input'
 import './Entries.scss'
+import NumberSearch from '../../components/shared/NumberSearch'
 
 const Entries = () => {
     const tags = [
@@ -64,7 +65,7 @@ const Entries = () => {
                         />
                     </div>
                     <div className='info-results'>
-                        Found <span className='number'>64</span> entries
+                        Found <NumberSearch>13</NumberSearch> entries
                     </div>
                     <div className='results'>
                         <CardEntry
