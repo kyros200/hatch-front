@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Landing from './pages/Landing';
 import Entries from './pages/Entries';
 import Error from './pages/Error';
+import HatchGames from './pages/HatchGames';
 import PageLayout from './layouts/PageLayout';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -34,6 +35,7 @@ ReactDOM.render(
             <Route index element={<Landing />} />
             <Route path="entries" element={<Entries />} />
             <Route path="error" element={<Error />} />
+            <Route path="games" element={<HatchGames />} />
             <Route path="me" element={<>About Me</>} />
             <Route path="about" element={<>About Hatch</>} />
           </Route>

@@ -9,8 +9,7 @@ const Header = () => {
                     Hatch.
                 </Link>
                 <div className='buttons'>
-                    <Link to="/error">DevLog</Link>
-                    <Link to="/error">Projects</Link>
+                    <Link to="/games">HatchGames</Link> 
                 </div>
             </div>
         </div>

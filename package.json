@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
+    "aos": "^2.3.4",
     "najjar": "kyros200/najjar#main",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -12,7 +13,8 @@
     "react-router-dom": "6",
     "react-scripts": "^4.0.1",
     "react-toastify": "^8.1.0",
-    "sass": "^1.47.0"
+    "sass": "^1.47.0",
+    "socket.io-client": "^4.5.4"
   },
   "scripts": {
     "start": "react-scripts start",
