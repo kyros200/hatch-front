@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "aos": "^2.3.4",
-    "najjar": "kyros200/najjar#main",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-input-mask": "^2.0.4",
