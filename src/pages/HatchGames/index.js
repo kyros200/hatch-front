@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 
+// const BACK_URL = `http://localhost:80`;
+const BACK_URL = `https://hatch-back.herokuapp.com/`;
+
 function Teste() {
   const [user, setUser] = useState("");
   const [pass, setPass] = useState("");
   const [room, setRoom] = useState("");
-  const [client, setClient] = useState(io(`http://localhost:80`, {
+  const [client, setClient] = useState(io(BACK_URL, {
     autoConnect: false,
     query: {
       user,
@@ -22,7 +25,7 @@ function Teste() {
   const [receivedMessages, setReceivedMessages] = useState([]);
 
   useEffect(() => {
-    setClient(io(`http://localhost:80`, {
+    setClient(io(BACK_URL, {
       autoConnect: false,
       query: {
         user,
