@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 
-// const BACK_URL = `http://localhost:80`;
-const BACK_URL = `https://hatch-back.herokuapp.com/`;
+const BACK_URL = process.env.REACT_APP_BACK_URL;
 
 function Teste() {
   const [user, setUser] = useState("");
@@ -81,6 +80,7 @@ function Teste() {
 
   const tryConnect = () => {
     console.log("trying to connect...")
+    console.log(BACK_URL)
     client.connect();
   }
 
@@ -90,7 +90,8 @@ function Teste() {
   }
 
   const sendMessage = () => {
-    client.emit("sendMessageRoom", message)
+    client.emit("sendMessageRoom", message);
+    setMessage("");
   }
 
   return (
