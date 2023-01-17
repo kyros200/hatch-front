@@ -5,6 +5,7 @@ import Entries from './pages/Entries';
 import Error from './pages/Error';
 import HatchGames from './pages/HatchGames';
 import PageLayout from './layouts/PageLayout';
+import HatchGamesLayout from './layouts/HatchGamesLayout';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {
@@ -35,9 +36,11 @@ ReactDOM.render(
             <Route index element={<Landing />} />
             <Route path="entries" element={<Entries />} />
             <Route path="error" element={<Error />} />
-            <Route path="games" element={<HatchGames />} />
             <Route path="me" element={<>About Me</>} />
             <Route path="about" element={<>About Hatch</>} />
+          </Route>
+          <Route path="/games" element={<HatchGamesLayout />}>
+            <Route index element={<HatchGames />} />
           </Route>
         </Routes> 
       </BrowserRouter>

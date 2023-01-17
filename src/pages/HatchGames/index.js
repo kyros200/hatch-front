@@ -80,7 +80,6 @@ function Teste() {
 
   const tryConnect = () => {
     console.log("trying to connect...")
-    console.log(BACK_URL)
     client.connect();
   }
 

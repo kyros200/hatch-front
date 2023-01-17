@@ -1,0 +1,29 @@
+@import '../../variables';
+
+.header-container {
+    background-color: $primary-dark;
+    display: flex;
+    justify-content: center;
+
+    .content {
+        width: $content-size;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0px;
+
+        .title {
+            font-family: 'Righteous', cursive;
+            text-decoration: none;
+            color: $text-color; 
+            font-size: 40px;
+            line-height: 40px;
+            user-select: none;
+        }
+
+        .userInfo {
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+    }
+}
