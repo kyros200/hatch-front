@@ -1,7 +1,7 @@
-import Link from '../shared/Link'
+import Link from '../../../../components/shared/Link'
 import './Header.scss'
 
-const Header = () => {
+const Header = ({connected, clientId}) => {
     return (
         <div className='header-container'>
             <div className='content'>
@@ -9,7 +9,7 @@ const Header = () => {
                     Hatch.
                 </Link>
                 <div className='userInfo'>
-                    userInfo Here
+                    {`Connected? ${connected}${connected ? ` (${clientId})` : ""}`}
                 </div>
             </div>
         </div>

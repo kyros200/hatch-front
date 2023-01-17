@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
+import Chat from './components/Chat'
+import HeaderHatchGames from './components/HeaderHatchGames'
 
 const BACK_URL = process.env.REACT_APP_BACK_URL;
 
 function Teste() {
   const [user, setUser] = useState("");
   const [pass, setPass] = useState("");
-  const [room, setRoom] = useState("");
   const [client, setClient] = useState(io(BACK_URL, {
     autoConnect: false,
     query: {
       user,
       pass,
-      room,
     }
   }))
   const [isConnected, setIsConnected] = useState(client.connected);
+  const [roomConnected, setRoomConnected] = useState("");
   const [clientId, setClientId] = useState();
   const [userServerCount, setUserServerCount] = useState(0);
   const [userRoomCount, setUserRoomCount] = useState(0);
@@ -29,18 +30,17 @@ function Teste() {
       query: {
         user,
         pass,
-        room,
       }
     }))
-  }, [user, pass, room]);
+  }, [user, pass]);
 
   useEffect(() => {
     client.on('connect', () => {
       setIsConnected(true);
       setClientId(client.id);
-      client.emit("joinRoom", (res) => {
-        console.log(res)
-      })
+      // client.emit("joinRoom", (res) => {
+      //   console.log(res)
+      // })
     });
 
     client.on("connect_error", (err) => {
@@ -95,29 +95,20 @@ function Teste() {
 
   return (
     <div>
-      <p>Are you Connected? { '' + isConnected }</p>
-      <p>Your ID: { clientId || '-' }</p>
+      <HeaderHatchGames connected={isConnected} clientId={clientId}/>
       <p>Users Connected to Server: { isConnected ? userServerCount : "Not connected to Server" }</p>
+      {roomConnected ? 
       <p>Users Connected to Room: { isConnected ? userRoomCount : "Not connected to Server" }</p>
+      :
+      <></>}
+      <h2>Login</h2>
       <input value={user} onChange={(e) => setUser(e.target.value)} />
       <input value={pass} onChange={(e) => setPass(e.target.value)} />
-      <input value={room} onChange={(e) => setRoom(e.target.value)} />
       <button onClick={ tryConnect }>Connect</button>
       <button onClick={ tryDisconnect }>Disconnect</button>
       <br/><br/>
       {isConnected ?
-      <>
-        <h2>Chat</h2>
-        <input value={message} onChange={(e) => setMessage(e.target.value)} />
-        <button onClick={ sendMessage }>Send</button>
-        {receivedMessages.map((message) => {
-          return (
-            <>
-            <p>{message}</p>
-            </>
-          )
-        })}
-      </>
+      <Chat message={message} setMessage={setMessage} receivedMessages={receivedMessages} sendMessage={sendMessage}/>
       :<></>
       }
     </div>
