@@ -1,6 +1,6 @@
 @import '../../../../variables';
 
-.header-container {
+.headerGamesContainer {
     background-color: $primary-dark;
     display: flex;
     justify-content: center;
@@ -10,6 +10,10 @@
         display: flex;
         justify-content: space-between;
         padding: 10px 0px;
+
+        @media screen and (max-width: $mobile) {
+            padding: 10px 10px;
+        }
 
         .title {
             font-family: 'Righteous', cursive;

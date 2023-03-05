@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import Input from '../../../../components/shared/Input';
+import './Login.scss';
 
 function Login({client, callback}) {
   const [user, setUser] = useState("");
@@ -13,17 +15,14 @@ function Login({client, callback}) {
     client.connect();
   }
 
-  const tryDisconnect = () => {
-    client.disconnect();
-  }
-
   return (
-    <div>
-      <h2>Login</h2>
-      <input value={user} onChange={(e) => setUser(e.target.value)} />
-      <input value={pass} onChange={(e) => setPass(e.target.value)} />
-      <button onClick={ tryConnect }>Connect</button>
-      <button onClick={ tryDisconnect }>Disconnect</button>
+    <div className='loginContainer'>
+        <div className='loginContent'>
+            <h2>Login</h2>
+            <Input className={"loginInput"} value={user} label={"username"} onChange={(e) => setUser(e.target.value)} />
+            <Input className={"loginInput"} value={pass} label={"password"} onChange={(e) => setPass(e.target.value)} />
+            <button onClick={ tryConnect }>Connect</button>
+        </div>
     </div>
   );
 }

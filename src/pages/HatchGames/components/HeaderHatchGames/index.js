@@ -1,15 +1,26 @@
 import Link from '../../../../components/shared/Link'
 import './Header.scss'
 
-const HeaderHatchGames = ({isConnected, clientInfo}) => {
+const HeaderHatchGames = ({client, isConnected, clientInfo}) => {
+
+    const tryDisconnect = () => {
+        client.disconnect();
+    }
+
     return (
-        <div className='header-container'>
+        <div className='headerGamesContainer'>
             <div className='content'>
                 <Link className='title' to="/">
                     Hatch.
                 </Link>
                 <div className='userInfo'>
-                    {`${isConnected ? `Logged as ${clientInfo?.user}` : "Not Logged"}`}
+                    {isConnected ? 
+                    <button onClick={ tryDisconnect }>Disconnect</button>
+                    : 
+                    <>
+                        Not Logged
+                    </>
+                    }
                 </div>
             </div>
         </div>

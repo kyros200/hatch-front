@@ -1,0 +1,32 @@
+@import '../../../../variables.scss';
+
+.loginContainer {
+    margin: 0;
+    background-image: linear-gradient($primary-dark, $primary);
+    height: calc(100vh - 60px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .loginContent {
+        border: 1px solid black;
+        border-radius: 12px;
+        background-color: rgba(200, 200, 200, 0.7);
+        padding: 20px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h2 {
+            margin: 0;
+            margin-bottom: 20px;
+            align-self: center;
+        }
+
+        .loginInput {
+            margin: 16px 0px;
+        }
+    }
+}

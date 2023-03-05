@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 import Chat from './components/Chat'
 import Login from './components/Login'
+import Projects from './components/Projects'
 import HeaderHatchGames from './components/HeaderHatchGames'
 
 const BACK_URL = process.env.REACT_APP_BACK_URL;
@@ -75,13 +76,17 @@ function HatchGames() {
   return (
     //TODO: create context for io Client here whenever possible
     <div>
-      <HeaderHatchGames isConnected={isConnected} clientInfo={clientInfo}/>
-      <p>Users Connected to Server: { isConnected ? userServerCount : "Not connected to Server" }</p>
+      <HeaderHatchGames client={client} isConnected={isConnected} clientInfo={clientInfo}/>
+      {/* <p>Users Connected to Server: { isConnected ? userServerCount : "Not connected to Server" }</p>
       {roomConnected ? 
       <p>Users Connected to Room: { isConnected ? userRoomCount : "Not connected to Server" }</p>
       :
-      <></>}
+      <></>} */}
+      {!isConnected ? 
       <Login client={client} callback={updateLogin}/>
+      :
+      <Projects client={client} callback={updateLogin}/>
+      }
       {isConnected ?
       <Chat client={client} />
       :<></>
