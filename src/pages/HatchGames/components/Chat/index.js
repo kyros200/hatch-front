@@ -25,8 +25,7 @@ function Chat({client, clientInfo}) {
   const sendMessage = () => {
     const payload = {
       message,
-      room: messageChannel,
-      user: clientInfo
+      channel: messageChannel
     }
 
     client.emit("sendChat", payload);
