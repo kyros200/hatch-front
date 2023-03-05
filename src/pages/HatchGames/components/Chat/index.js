@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Chat.scss'
 
-function Chat({client, clientInfo}) {
+function Chat({client}) {
   const [isOpen, setIsOpen] = useState(false)
   const [message, setMessage] = useState("");
   const [messageChannel, setMessageChannel] = useState("global")

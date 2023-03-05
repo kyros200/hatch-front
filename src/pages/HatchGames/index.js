@@ -1,28 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 import Chat from './components/Chat'
+import Login from './components/Login'
 import HeaderHatchGames from './components/HeaderHatchGames'
 
 const BACK_URL = process.env.REACT_APP_BACK_URL;
 
-function Teste() {
-  const [user, setUser] = useState("");
-  const [pass, setPass] = useState("");
+function HatchGames() {
   const [client, setClient] = useState(io(BACK_URL, {
     autoConnect: false,
     query: {
-      user,
-      pass,
     }
   }))
   const [isConnected, setIsConnected] = useState(client.connected);
   const [roomConnected, setRoomConnected] = useState("");
-  const [clientId, setClientId] = useState();
   const [clientInfo, setClientInfo] = useState();
   const [userServerCount, setUserServerCount] = useState(0);
   const [userRoomCount, setUserRoomCount] = useState(0);
 
-  useEffect(() => {
+  const updateLogin = ({user, pass}) => {
     setClient(io(BACK_URL, {
       autoConnect: false,
       query: {
@@ -30,14 +26,13 @@ function Teste() {
         pass,
       }
     }))
-  }, [user, pass]);
+  }
 
   useEffect(() => {
     client.on('connect', () => {
       console.log("connected successfully!")
       setIsConnected(true);
-      setClientId(client.id);
-      setClientInfo({user})
+      client.emit("getClientInfo")
       // client.emit("joinRoom", (res) => {
       //   console.log(res)
       // })
@@ -59,6 +54,10 @@ function Teste() {
       setUserRoomCount(count);
     });
 
+    client.on('ReceiveClientInfo', (userInfo) => {
+      setClientInfo(userInfo)
+    });
+
     client.on('joinRoom', (res) => {
       console.log(res)
     })
@@ -73,17 +72,8 @@ function Teste() {
     };
   }, [client]);
 
-  const tryConnect = () => {
-    console.log("trying to connect...")
-    client.connect();
-  }
-
-  const tryDisconnect = () => {
-    client.disconnect();
-    setClientId()
-  }
-
   return (
+    //TODO: create context for io Client here whenever possible
     <div>
       <HeaderHatchGames isConnected={isConnected} clientInfo={clientInfo}/>
       <p>Users Connected to Server: { isConnected ? userServerCount : "Not connected to Server" }</p>
@@ -91,18 +81,13 @@ function Teste() {
       <p>Users Connected to Room: { isConnected ? userRoomCount : "Not connected to Server" }</p>
       :
       <></>}
-      <h2>Login</h2>
-      <input value={user} onChange={(e) => setUser(e.target.value)} />
-      <input value={pass} onChange={(e) => setPass(e.target.value)} />
-      <button onClick={ tryConnect }>Connect</button>
-      <button onClick={ tryDisconnect }>Disconnect</button>
-      <br/><br/>
+      <Login client={client} callback={updateLogin}/>
       {isConnected ?
-      <Chat client={client} clientInfo={clientInfo} />
+      <Chat client={client} />
       :<></>
       }
     </div>
   );
 }
 
-export default Teste;
+export default HatchGames;
