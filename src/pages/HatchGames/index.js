@@ -18,11 +18,9 @@ function Teste() {
   const [isConnected, setIsConnected] = useState(client.connected);
   const [roomConnected, setRoomConnected] = useState("");
   const [clientId, setClientId] = useState();
+  const [clientInfo, setClientInfo] = useState();
   const [userServerCount, setUserServerCount] = useState(0);
   const [userRoomCount, setUserRoomCount] = useState(0);
-
-  const [message, setMessage] = useState("");
-  const [receivedMessages, setReceivedMessages] = useState([]);
 
   useEffect(() => {
     setClient(io(BACK_URL, {
@@ -36,8 +34,10 @@ function Teste() {
 
   useEffect(() => {
     client.on('connect', () => {
+      console.log("connected successfully!")
       setIsConnected(true);
       setClientId(client.id);
+      setClientInfo({user})
       // client.emit("joinRoom", (res) => {
       //   console.log(res)
       // })
@@ -63,20 +63,15 @@ function Teste() {
       console.log(res)
     })
 
-    client.on('receiveMessageRoom', (res) => {
-      setReceivedMessages([res, ...receivedMessages])
-    })
-
     return () => {
       client.off('connect');
       client.off('connect_error');
       client.off('disconnect');
       client.off('getServerUsersCount');
       client.off('getRoomUsersCount');
-      client.off('receiveMessageRoom');
       client.off('joinRoom');
     };
-  }, [client, receivedMessages]);
+  }, [client]);
 
   const tryConnect = () => {
     console.log("trying to connect...")
@@ -88,14 +83,9 @@ function Teste() {
     setClientId()
   }
 
-  const sendMessage = () => {
-    client.emit("sendMessageRoom", message);
-    setMessage("");
-  }
-
   return (
     <div>
-      <HeaderHatchGames connected={isConnected} clientId={clientId}/>
+      <HeaderHatchGames isConnected={isConnected} clientInfo={clientInfo}/>
       <p>Users Connected to Server: { isConnected ? userServerCount : "Not connected to Server" }</p>
       {roomConnected ? 
       <p>Users Connected to Room: { isConnected ? userRoomCount : "Not connected to Server" }</p>
@@ -108,7 +98,7 @@ function Teste() {
       <button onClick={ tryDisconnect }>Disconnect</button>
       <br/><br/>
       {isConnected ?
-      <Chat message={message} setMessage={setMessage} receivedMessages={receivedMessages} sendMessage={sendMessage}/>
+      <Chat client={client} clientInfo={clientInfo} />
       :<></>
       }
     </div>

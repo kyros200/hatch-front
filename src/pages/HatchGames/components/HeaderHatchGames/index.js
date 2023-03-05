@@ -1,7 +1,7 @@
 import Link from '../../../../components/shared/Link'
 import './Header.scss'
 
-const Header = ({connected, clientId}) => {
+const HeaderHatchGames = ({isConnected, clientInfo}) => {
     return (
         <div className='header-container'>
             <div className='content'>
@@ -9,11 +9,11 @@ const Header = ({connected, clientId}) => {
                     Hatch.
                 </Link>
                 <div className='userInfo'>
-                    {`Connected? ${connected}${connected ? ` (${clientId})` : ""}`}
+                    {`${isConnected ? `Logged as ${clientInfo?.user}` : "Not Logged"}`}
                 </div>
             </div>
         </div>
     )
 }
 
-export default Header;
+export default HeaderHatchGames;
