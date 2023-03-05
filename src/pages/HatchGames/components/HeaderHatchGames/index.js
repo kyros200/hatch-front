@@ -1,12 +1,7 @@
 import Link from '../../../../components/shared/Link'
 import './Header.scss'
 
-const HeaderHatchGames = ({client, isConnected, clientInfo}) => {
-
-    const tryDisconnect = () => {
-        client.disconnect();
-    }
-
+const HeaderHatchGames = ({isConnected, callback}) => {
     return (
         <div className='headerGamesContainer'>
             <div className='content'>
@@ -15,7 +10,7 @@ const HeaderHatchGames = ({client, isConnected, clientInfo}) => {
                 </Link>
                 <div className='userInfo'>
                     {isConnected ? 
-                    <button onClick={ tryDisconnect }>Disconnect</button>
+                    <button onClick={ callback }>Disconnect</button>
                     : 
                     <>
                         Not Logged

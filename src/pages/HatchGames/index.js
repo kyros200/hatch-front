@@ -3,6 +3,7 @@ import io from 'socket.io-client';
 import Chat from './components/Chat'
 import Login from './components/Login'
 import Projects from './components/Projects'
+import Lobby from './components/Lobby'
 import HeaderHatchGames from './components/HeaderHatchGames'
 
 const BACK_URL = process.env.REACT_APP_BACK_URL;
@@ -14,10 +15,10 @@ function HatchGames() {
     }
   }))
   const [isConnected, setIsConnected] = useState(client.connected);
+  const [choosenProject, setChoosenProject] = useState("");
   const [roomConnected, setRoomConnected] = useState("");
   const [clientInfo, setClientInfo] = useState();
-  const [userServerCount, setUserServerCount] = useState(0);
-  const [userRoomCount, setUserRoomCount] = useState(0);
+  const [userCount, setUserCount] = useState({global: 0, room: 0});
 
   const updateLogin = ({user, pass}) => {
     setClient(io(BACK_URL, {
@@ -48,11 +49,11 @@ function HatchGames() {
     });
     
     client.on('getServerUsersCount', (count) => {
-      setUserServerCount(count);
+      setUserCount({...userCount, global: count});
     });
 
     client.on('getRoomUsersCount', (count) => {
-      setUserRoomCount(count);
+      setUserCount({...userCount, room: count});
     });
 
     client.on('ReceiveClientInfo', (userInfo) => {
@@ -73,23 +74,37 @@ function HatchGames() {
     };
   }, [client]);
 
+  const tryDisconnect = () => {
+    setChoosenProject("")
+    setRoomConnected("")
+    setClientInfo()
+    client.disconnect();
+  }
+
   return (
     //TODO: create context for io Client here whenever possible
     <div>
-      <HeaderHatchGames client={client} isConnected={isConnected} clientInfo={clientInfo}/>
+      <HeaderHatchGames isConnected={isConnected} callback={tryDisconnect}/>
       {/* <p>Users Connected to Server: { isConnected ? userServerCount : "Not connected to Server" }</p>
       {roomConnected ? 
       <p>Users Connected to Room: { isConnected ? userRoomCount : "Not connected to Server" }</p>
       :
       <></>} */}
-      {!isConnected ? 
-      <Login client={client} callback={updateLogin}/>
-      :
-      <Projects client={client} callback={updateLogin}/>
+
+      {!isConnected && 
+      <Login client={client} callback={updateLogin} /> 
       }
-      {isConnected ?
+
+      {isConnected && !choosenProject && 
+      <Projects client={client} setChoosenProject={setChoosenProject} />
+      }
+
+      {isConnected && choosenProject && 
+      <Lobby client={client} choosenProject={choosenProject} />
+      }
+
+      {isConnected &&
       <Chat client={client} />
-      :<></>
       }
     </div>
   );

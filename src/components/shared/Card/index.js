@@ -1,10 +1,10 @@
 import {useNavigate} from 'react-router-dom'
 import './Card.scss'
 
-const Card = ({children, className="", to, ...style}) => {
+const Card = ({children, className="", to, ...rest}) => {
     const navigate = useNavigate()
     return (
-    <div className={`card ${className}`} style={{...style}} onClick={() => to && navigate(to)}>
+    <div className={`card ${className}`} onClick={() => to && navigate(to)} {...rest}>
         {children}
     </div>
     )

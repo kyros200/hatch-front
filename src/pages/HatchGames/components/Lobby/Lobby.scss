@@ -1,0 +1,48 @@
+@import '../../../../variables.scss';
+
+.lobbyContainer {
+    margin: 0;
+    background-image: linear-gradient($primary-dark, $primary);
+    height: calc(100vh - 60px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .lobbyContent {
+        border: 1px solid black;
+        border-radius: 12px;
+        background-color: rgba(200, 200, 200, 0.7);
+        padding: 20px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h2 {
+            margin: 0;
+            margin-bottom: 20px;
+            align-self: center;
+        }
+
+        .lobbyCards {
+            display: flex;
+            justify-content: center;
+
+            @media screen and (max-width: $mobile) {
+                flex-direction: column;
+                height: 350px;
+            }
+
+            .lobbyCard {
+                margin: 0px 16px;
+                justify-content: flex-end;
+                background-color: wheat;
+
+                @media screen and (max-width: $mobile) {
+                    margin: 16px 0px;
+                }
+            }
+        }
+    }
+}

@@ -20,7 +20,7 @@ function Login({client, callback}) {
         <div className='loginContent'>
             <h2>Login</h2>
             <Input className={"loginInput"} value={user} label={"username"} onChange={(e) => setUser(e.target.value)} />
-            <Input className={"loginInput"} value={pass} label={"password"} onChange={(e) => setPass(e.target.value)} />
+            <Input className={"loginInput"} value={pass} label={"password (type '1' to access)"} onChange={(e) => setPass(e.target.value)} />
             <button onClick={ tryConnect }>Connect</button>
         </div>
     </div>
