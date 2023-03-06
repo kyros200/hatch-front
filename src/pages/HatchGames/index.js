@@ -4,6 +4,7 @@ import Chat from './components/Chat'
 import Login from './components/Login'
 import Projects from './components/Projects'
 import Lobby from './components/Lobby'
+import GameRenderer from './games'
 import HeaderHatchGames from './components/HeaderHatchGames'
 
 const BACK_URL = process.env.REACT_APP_BACK_URL;
@@ -18,7 +19,8 @@ function HatchGames() {
   const [choosenProject, setChoosenProject] = useState("");
   const [roomConnected, setRoomConnected] = useState("");
   const [clientInfo, setClientInfo] = useState();
-  const [userCount, setUserCount] = useState({global: 0, room: 0});
+  const [userCountGlobal, setUserCountGlobal] = useState(0);
+  const [userCountRoom, setUserCountRoom] = useState(0);
 
   const updateLogin = ({user, pass}) => {
     setClient(io(BACK_URL, {
@@ -35,9 +37,6 @@ function HatchGames() {
       console.log("connected successfully!")
       setIsConnected(true);
       client.emit("getClientInfo")
-      // client.emit("joinRoom", (res) => {
-      //   console.log(res)
-      // })
     });
 
     client.on("connect_error", (err) => {
@@ -49,11 +48,11 @@ function HatchGames() {
     });
     
     client.on('getServerUsersCount', (count) => {
-      setUserCount({...userCount, global: count});
+      setUserCountGlobal(count);
     });
 
     client.on('getRoomUsersCount', (count) => {
-      setUserCount({...userCount, room: count});
+      setUserCountRoom(count);
     });
 
     client.on('ReceiveClientInfo', (userInfo) => {
@@ -85,11 +84,6 @@ function HatchGames() {
     //TODO: create context for io Client here whenever possible
     <div>
       <HeaderHatchGames isConnected={isConnected} callback={tryDisconnect}/>
-      {/* <p>Users Connected to Server: { isConnected ? userServerCount : "Not connected to Server" }</p>
-      {roomConnected ? 
-      <p>Users Connected to Room: { isConnected ? userRoomCount : "Not connected to Server" }</p>
-      :
-      <></>} */}
 
       {!isConnected && 
       <Login client={client} callback={updateLogin} /> 
@@ -99,12 +93,16 @@ function HatchGames() {
       <Projects client={client} setChoosenProject={setChoosenProject} />
       }
 
-      {isConnected && choosenProject && 
-      <Lobby client={client} choosenProject={choosenProject} />
+      {isConnected && choosenProject && !roomConnected &&
+      <Lobby client={client} choosenProject={choosenProject} setRoomConnected={setRoomConnected}/>
+      }
+
+      {isConnected && choosenProject && roomConnected && 
+      <GameRenderer client={client} roomConnected={roomConnected}/>
       }
 
       {isConnected &&
-      <Chat client={client} />
+      <Chat client={client} roomConnected={roomConnected} userCountGlobal={userCountGlobal} userCountRoom={userCountRoom}/>
       }
     </div>
   );

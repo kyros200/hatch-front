@@ -1,6 +1,6 @@
 import ReactModal from 'react-modal';
 
-function Modal(props) {
+function Modal({open, children, rest}) {
     const modalStyle = {
         content : {
             top: '50%',
@@ -17,12 +17,13 @@ function Modal(props) {
 
     return (
         <ReactModal
-            isOpen={props.open}
+            isOpen={open}
             ariaHideApp={false}
             style={modalStyle}
             shouldCloseOnOverlayClick={false}
+            {...rest}
         >
-            {props.children}
+            {children}
         </ReactModal>
     )
 

@@ -1,0 +1,35 @@
+.roomContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    >.room {
+        display: flex;
+        width: 500px;
+        border: 1px solid black;
+        margin-bottom: 8px;
+
+        >.roomInfo {
+            display: flex;
+            justify-content: space-between;
+
+            width: inherit;
+            padding: 16px;
+        }
+
+        >.roomButton {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-left: 1px solid black;
+            padding: 20px;
+
+            cursor: pointer;
+            
+        }
+        
+        >.roomButton:hover {
+            background-color: greenyellow;
+        }
+    }
+}

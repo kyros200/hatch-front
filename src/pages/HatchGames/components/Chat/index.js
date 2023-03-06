@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Chat.scss'
 
-function Chat({client}) {
+function Chat({client, roomConnected, userCountGlobal, userCountRoom}) {
   const [isOpen, setIsOpen] = useState(false)
   const [message, setMessage] = useState("");
   const [messageChannel, setMessageChannel] = useState("global")
@@ -38,10 +38,10 @@ function Chat({client}) {
       <button onClick={ () => setIsOpen(!isOpen) }>Open/Close</button>
       {isOpen ?
       <>
-        <button onClick={ () => setMessageChannel("user") }>User</button>
-        <button onClick={ () => setMessageChannel("room") }>Room</button>
-        <button onClick={ () => setMessageChannel("global") }>Global</button>
-        <p>{`Channel: ${messageChannel}`}</p>
+        {/* <button onClick={ () => setMessageChannel("user") }>{`User`}</button> */}
+        {roomConnected && <button onClick={ () => setMessageChannel("room") }>{`Room(${userCountRoom})`}</button>}
+        <button onClick={ () => setMessageChannel("global") }>{`Global(${userCountGlobal})`}</button>
+        <p>{`Channel: ${messageChannel}${roomConnected && messageChannel === "room" ? ` (${roomConnected})` : ""}`}</p>
         {receivedMessages[messageChannel].map((message) => {
           return (
             <>
