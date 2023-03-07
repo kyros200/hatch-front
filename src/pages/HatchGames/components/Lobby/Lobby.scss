@@ -19,30 +19,14 @@
         flex-direction: column;
         justify-content: center;
 
+        @media screen and (max-width: $mobile) {
+            max-width: 80%;
+        }
+
         h2 {
             margin: 0;
             margin-bottom: 20px;
             align-self: center;
-        }
-
-        .lobbyCards {
-            display: flex;
-            justify-content: center;
-
-            @media screen and (max-width: $mobile) {
-                flex-direction: column;
-                height: 350px;
-            }
-
-            .lobbyCard {
-                margin: 0px 16px;
-                justify-content: flex-end;
-                background-color: wheat;
-
-                @media screen and (max-width: $mobile) {
-                    margin: 16px 0px;
-                }
-            }
         }
     }
 }

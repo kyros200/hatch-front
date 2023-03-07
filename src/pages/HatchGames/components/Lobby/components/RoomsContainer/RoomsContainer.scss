@@ -1,12 +1,25 @@
+@import '../../../../../../variables.scss';
+
 .roomContainer {
     display: flex;
     flex-direction: column;
     margin-bottom: 16px;
+    max-height: 50vh;
+    overflow-y: auto;
+
+    @media screen and (max-width: $mobile) {
+        max-height: 300px;
+        overflow-x: hidden;
+    }
+
     >.room {
         display: flex;
-        width: 500px;
         border: 1px solid black;
         margin-bottom: 8px;
+
+        @media screen and (min-width: $mobile) {
+            width: 500px;
+        }
 
         >.roomInfo {
             display: flex;
