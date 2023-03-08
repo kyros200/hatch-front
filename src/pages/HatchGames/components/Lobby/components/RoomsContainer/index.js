@@ -8,8 +8,8 @@ function RoomsContainer({ rooms, joinRoom }) {
         {rooms.length === 0 ?
         <>No game rooms! Create a new one!</>
         :
-        rooms.map((room) => { return (
-          <div className='room'>
+        rooms.map((room, index) => { return (
+          <div className='room' key={index+1}>
             <div className='roomInfo'>
               <div className='left'>
                 <div className='field'>{room.name.split("-")[1]}</div>

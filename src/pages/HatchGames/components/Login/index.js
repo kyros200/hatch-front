@@ -8,7 +8,7 @@ function Login({client, callback}) {
 
   useEffect(() => {
     callback({user, pass})
-  }, [user, pass]);
+  }, [user, pass, callback]);
 
   const tryConnect = () => {
     console.log("trying to connect...")

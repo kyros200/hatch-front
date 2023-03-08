@@ -16,7 +16,7 @@ import {
 import './main.scss'
 
 ReactDOM.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <main>
       <ToastContainer
         position="top-right"
@@ -41,7 +41,7 @@ ReactDOM.render(
           <Route path="/games" element={<HatchGames />} />
         </Routes> 
       </BrowserRouter>
-    </main>
-  </React.StrictMode>,
+    </main>,
+  // </React.StrictMode>,
   document.getElementById('root')
 );

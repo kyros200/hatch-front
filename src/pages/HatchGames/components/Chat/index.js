@@ -12,7 +12,7 @@ function Chat({client, roomConnected, userCountGlobal, userCountRoom}) {
       
       const newLog = {...receivedMessages}
       
-      newLog[channel] = [...newLog[channel], message]
+      newLog[channel] = [message, ...newLog[channel]]
 
       setReceivedMessages(newLog)
     })
@@ -37,21 +37,23 @@ function Chat({client, roomConnected, userCountGlobal, userCountRoom}) {
     <div className="chatContainer">
       <button onClick={ () => setIsOpen(!isOpen) }>Open/Close</button>
       {isOpen ?
-      <>
+      <div className='chatWrapper'>
         {/* <button onClick={ () => setMessageChannel("user") }>{`User`}</button> */}
         {roomConnected && <button onClick={ () => setMessageChannel("room") }>{`Room(${userCountRoom})`}</button>}
         <button onClick={ () => setMessageChannel("global") }>{`Global(${userCountGlobal})`}</button>
         <p>{`Channel: ${messageChannel}${roomConnected && messageChannel === "room" ? ` (${roomConnected})` : ""}`}</p>
-        {receivedMessages[messageChannel].map((message) => {
-          return (
-            <>
-              <p>{message}</p>
-            </>
-          )
-        })}
-        <input value={message} onChange={(e) => setMessage(e.target.value)} />
-        <button onClick={ sendMessage }>Send</button>
-      </>
+        <div className='messageContainer'>
+          {receivedMessages[messageChannel].map((message, index) => {
+            return (
+              <div className='message' key={index}>
+                <p>{message}</p>
+              </div>
+            )
+          })}
+        </div>
+        <input className='sendInput' value={message} onChange={(e) => setMessage(e.target.value)} />
+        <button className='sendButton' onClick={ sendMessage }>Send</button>
+      </div>
       :
       <>
       </>

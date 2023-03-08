@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import Modal from '../../../../components/shared/Modal';
 import Input from '../../../../components/shared/Input';
 import RoomsContainer from './components/RoomsContainer'
@@ -10,6 +10,12 @@ function Lobby({ client, choosenProject, setRoomConnected }) {
   const [rooms, setRooms] = useState([])
   const [roomName, setRoomName] = useState([])
 
+  const updateRooms = useCallback(() => {
+    client.emit("getProjectRooms", choosenProject, (res) => {
+      setRooms(res)
+    });
+  }, [choosenProject, client])
+
   useEffect(() => {
     client.on('updateLobbies', () => {
       updateRooms()
@@ -18,17 +24,11 @@ function Lobby({ client, choosenProject, setRoomConnected }) {
     return () => {
       client.off('connect');
     };
-  }, [client]);
+  }, [client, updateRooms]);
 
   useEffect(() => {
     updateRooms()
-  }, [])
-
-  const updateRooms = () => {
-    client.emit("getProjectRooms", choosenProject, (res) => {
-      setRooms(res)
-    });
-  }
+  }, [updateRooms])
 
   const openCreateModal = () => {
     setModalCreate(true)

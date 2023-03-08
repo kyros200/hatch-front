@@ -2,5 +2,24 @@
     position: fixed;
     bottom: 0;
     left: 0;
-    margin: 0 0 8px 8px
+    margin: 0 0 8px 8px;
+
+    >.chatWrapper {
+        >.messageContainer{
+            height: 160px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column-reverse;
+            >.message {
+                p {
+                    margin: 8px 0px;
+                }
+            }
+        }
+    
+        >.sendInput {
+            margin-top: 8px;
+        }
+    }
+
 }

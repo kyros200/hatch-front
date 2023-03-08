@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import io from 'socket.io-client';
 import Chat from './components/Chat'
 import Login from './components/Login'
@@ -22,7 +22,7 @@ function HatchGames() {
   const [userCountGlobal, setUserCountGlobal] = useState(0);
   const [userCountRoom, setUserCountRoom] = useState(0);
 
-  const updateLogin = ({user, pass}) => {
+  const updateLogin = useCallback(({user, pass}) => {
     setClient(io(BACK_URL, {
       autoConnect: false,
       query: {
@@ -30,13 +30,15 @@ function HatchGames() {
         pass,
       }
     }))
-  }
+  }, [])
 
   useEffect(() => {
     client.on('connect', () => {
       console.log("connected successfully!")
       setIsConnected(true);
-      client.emit("getClientInfo")
+      client.emit("getClientInfo", (res) => {
+        setClientInfo(res)
+      })
     });
 
     client.on("connect_error", (err) => {
@@ -53,10 +55,6 @@ function HatchGames() {
 
     client.on('getRoomUsersCount', (count) => {
       setUserCountRoom(count);
-    });
-
-    client.on('ReceiveClientInfo', (userInfo) => {
-      setClientInfo(userInfo)
     });
 
     client.on('joinRoom', (res) => {
@@ -86,7 +84,7 @@ function HatchGames() {
       <HeaderHatchGames isConnected={isConnected} callback={tryDisconnect}/>
 
       {!isConnected && 
-      <Login client={client} callback={updateLogin} /> 
+      <Login client={client} callback={updateLogin} clientInfo={clientInfo}/> 
       }
 
       {isConnected && !choosenProject && 
