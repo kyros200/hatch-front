@@ -4,7 +4,7 @@ import Input from '../../../../components/shared/Input';
 import RoomsContainer from './components/RoomsContainer'
 import './Lobby.scss';
 
-function Lobby({ client, choosenProject, setRoomConnected }) {
+function Lobby({ client, choosenProject, setChoosenProject, setRoomConnected }) {
 
   const [modalCreate, setModalCreate] = useState(false)
   const [rooms, setRooms] = useState([])
@@ -49,10 +49,17 @@ function Lobby({ client, choosenProject, setRoomConnected }) {
     })
   }
 
+  const exitChoosenProject = () => {
+    setChoosenProject("")
+  }
+
   return (
     <div className='lobbyContainer'>
         <div className='lobbyContent'>
           <h2>Lobby</h2>
+          <div className="lobbyCloseButton" onClick={exitChoosenProject}>
+            X
+          </div>
           <RoomsContainer rooms={rooms} joinRoom={joinRoom}/>
           <button onClick={ openCreateModal }>Create Room</button>
           <Modal

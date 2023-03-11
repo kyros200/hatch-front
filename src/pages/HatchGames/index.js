@@ -92,7 +92,7 @@ function HatchGames() {
       }
 
       {isConnected && choosenProject && !roomConnected &&
-      <Lobby client={client} choosenProject={choosenProject} setRoomConnected={setRoomConnected}/>
+      <Lobby client={client} choosenProject={choosenProject} setChoosenProject={setChoosenProject} setRoomConnected={setRoomConnected}/>
       }
 
       {isConnected && choosenProject && roomConnected && 
