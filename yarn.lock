@@ -7322,10 +7322,6 @@ multicast-dns@^6.0.1:
     dns-packet "^1.3.1"
     thunky "^1.0.2"
 
-najjar@kyros200/najjar#main:
-  version "0.0.2"
-  resolved "git+ssh://git@github.com/kyros200/najjar.git#c9b41fd10c31b622541f5ec1420a3b57c8581326"
-
 nan@^2.12.1:
   version "2.16.0"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.16.0.tgz#664f43e45460fb98faf00edca0bb0d7b8dce7916"

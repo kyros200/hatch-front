@@ -1,10 +1,54 @@
+@import '../../../../variables.scss';
+
 .chatContainer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    margin: 0 0 8px 8px;
+    position: absolute;
+    bottom: 0px;
+    left: 8px;
+    // margin: 0 0 8px 8px;
+    transition: all 1s;
+    // transform: translateY(278px);
+
+    &.open {
+        // transform: translateY(0px);
+        transition: all 1s;
+        bottom: 8px;
+    }
+
+    @media screen and (max-width: $mobile) {
+        right: 8px
+    }
+
+    >.chatOpenerButton {
+        width: fit-content;
+        cursor: pointer;
+        padding: 6px;
+        position: relative;
+        background-color: rgb(0, 102, 0);
+        border: 2px solid black;
+        border-bottom: 0px;
+        border-radius: 12px 12px 0 0;
+        &.open {
+            bottom: -2px
+        }
+        &:hover {
+            background-color: rgb(0, 90, 0); 
+        }
+    }
 
     >.chatWrapper {
+        background-color: rgb(0, 102, 0);
+        max-height: 0px;
+        transition: max-height 1s;
+        overflow: hidden;
+        
+        &.open {
+            border: 2px solid black;
+            border-radius: 0 12px 12px 12px;
+            padding: 8px;
+            max-height: 278px;
+            transition: max-height 1s;
+        }
+
         >.messageContainer{
             height: 160px;
             overflow-y: auto;
@@ -17,8 +61,13 @@
             }
         }
     
-        >.sendInput {
+        >.chatForm {
+            display: flex;
             margin-top: 8px;
+
+            >.sendInput {
+                width: -webkit-fill-available;
+            }
         }
     }
 

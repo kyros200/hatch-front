@@ -22,7 +22,9 @@ function Chat({client, roomConnected, userCountGlobal, userCountRoom}) {
     };
   }, [client, receivedMessages]);
 
-  const sendMessage = () => {
+  const sendMessage = (e) => {
+    e.preventDefault()
+    
     const payload = {
       message,
       channel: messageChannel
@@ -34,10 +36,9 @@ function Chat({client, roomConnected, userCountGlobal, userCountRoom}) {
   }
 
   return (
-    <div className="chatContainer">
-      <button onClick={ () => setIsOpen(!isOpen) }>Open/Close</button>
-      {isOpen ?
-      <div className='chatWrapper'>
+    <div className={`chatContainer ${isOpen ? "open" : ""}`}>
+      <div className={`chatOpenerButton ${isOpen ? "open" : ""}`} onClick={ () => setIsOpen(!isOpen) }>{`${isOpen ? "Close" : "Open"} Chat`}</div>
+      <div className={`chatWrapper ${isOpen ? "open" : ""}`}>
         {/* <button onClick={ () => setMessageChannel("user") }>{`User`}</button> */}
         {roomConnected && <button onClick={ () => setMessageChannel("room") }>{`Room(${userCountRoom})`}</button>}
         <button onClick={ () => setMessageChannel("global") }>{`Global(${userCountGlobal})`}</button>
@@ -51,13 +52,11 @@ function Chat({client, roomConnected, userCountGlobal, userCountRoom}) {
             )
           })}
         </div>
-        <input className='sendInput' value={message} onChange={(e) => setMessage(e.target.value)} />
-        <button className='sendButton' onClick={ sendMessage }>Send</button>
+        <form className='chatForm' onSubmit={sendMessage}>
+          <input autoFocus={isOpen} className='sendInput' value={message} onChange={(e) => setMessage(e.target.value)} />
+          <button className='sendButton' tyoe="submit">Send</button>
+        </form>
       </div>
-      :
-      <>
-      </>
-      }
     </div>
   );
 }
