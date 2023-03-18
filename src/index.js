@@ -20,14 +20,14 @@ ReactDOM.render(
     <main>
       <ToastContainer
         position="top-right"
-        autoClose={4000}
-        hideProgressBar
+        autoClose={3500}
         newestOnTop
         closeOnClick
         rtl={false}
         pauseOnFocusLoss={false}
         draggable={false}
         pauseOnHover={false}
+        theme="colored"
       />
       <BrowserRouter>
         <Routes>
@@ -39,7 +39,7 @@ ReactDOM.render(
             <Route path="about" element={<>About Hatch</>} />
           </Route>
           <Route path="/games" element={<HatchGames />} />
-        </Routes> 
+        </Routes>
       </BrowserRouter>
     </main>,
   // </React.StrictMode>,

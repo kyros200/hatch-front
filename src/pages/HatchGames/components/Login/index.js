@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Input from '../../../../components/shared/Input';
 import './Login.scss';
 
-function Login({client, callback}) {
+function Login({client, callback, setIsLoading}) {
   const [user, setUser] = useState("");
   const [pass, setPass] = useState("");
 
@@ -12,6 +12,7 @@ function Login({client, callback}) {
 
   const tryConnect = () => {
     console.log("trying to connect...")
+    setIsLoading(true)
     client.connect();
   }
 

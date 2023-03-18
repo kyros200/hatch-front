@@ -1,6 +1,6 @@
 import ReactModal from 'react-modal';
 
-function Modal({open, children, rest}) {
+function Modal({open, children, ...rest}) {
     const modalStyle = {
         content : {
             top: '50%',
