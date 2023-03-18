@@ -3,7 +3,7 @@ import './TicTacToe.scss';
 
 function TicTacToe({ client }) {
     return (
-        <div className='gameContainer'>
+        <div className=''>
             you are finally inside a game!
         </div>
     );

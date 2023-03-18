@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import TicTacToe from './TicTacToe'
-import './Game.scss';
+import './GameRenderer.scss';
 
 function GameRenderer({ client, roomConnected }) {
+
+    useEffect(() => {
+        // client.on('joinRoom', (res) => {
+        //     console.log(res)
+        // })
+
+        return () => {
+            // client.off('joinRoom');
+        };
+    }, [client])
 
     const renderGame = () => {
         const game = roomConnected?.substring(0, 3)
@@ -13,12 +23,24 @@ function GameRenderer({ client, roomConnected }) {
         else if(game.includes("reg")) {
             return <>Work in Progress</>
         }
-        else return <>Error</>
+        else return <>GAME CODE NOT FOUND!!!</>
     }
 
     return (
         <div className='gameContainer'>
-            {renderGame()}
+            <div className="roomInfo">
+                <div className="actions">
+                    <button>Leave Room</button>
+                    <div className="announcer onlyDesktop">Announcer Desktop</div>
+                    <div>Manual</div>
+                </div>
+                <div className="mobileAnnouncer onlyMobile">
+                    <div className="announcer">Announcer Mobile</div>
+                </div>
+            </div>
+            <div className="gameContent">
+                {renderGame()}
+            </div>
         </div>
     );
 }

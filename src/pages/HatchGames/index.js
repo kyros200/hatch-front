@@ -90,7 +90,7 @@ function HatchGames() {
   return (
     //TODO: create context for io Client here whenever possible
     <div>
-      <Loader show={isLoading} introText="intro Text" mainText="main Text"/>
+      <Loader show={isLoading} introText="Welcome to HatchGames" mainText="Trying to Login..."/>
       <HeaderHatchGames isConnected={isConnected} callback={tryDisconnect}/>
 
       {!isConnected && 
@@ -106,7 +106,7 @@ function HatchGames() {
       }
 
       {isConnected && choosenProject && roomConnected && 
-      <GameRenderer client={client} roomConnected={roomConnected}/>
+      <GameRenderer client={client} roomConnected={roomConnected} setRoomConnected={setRoomConnected}/>
       }
 
       {isConnected &&

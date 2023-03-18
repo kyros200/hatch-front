@@ -1,0 +1,30 @@
+@import '../../../variables.scss';
+
+.gameContainer {
+    margin: 0;
+    background-image: linear-gradient($primary-dark, $primary);
+    height: calc(100vh - 60px);
+    > .roomInfo {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 0px 8px;
+
+        .announcer {
+            color: white;
+            font-weight: 800;
+        }
+
+        > .mobileAnnouncer {
+            display: flex;
+            justify-content: center;
+        }
+
+        > .actions {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}

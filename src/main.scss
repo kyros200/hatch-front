@@ -25,3 +25,17 @@ html, body, .viewport {
     height: 100%;
     display: flex;
 }
+
+.onlyMobile {
+    display: none !important;
+}
+
+@media screen and (max-width: $mobile) {
+    .onlyMobile {
+        display: inherit !important
+    }
+
+    .onlyDesktop {
+        display: none !important
+    }   
+}
