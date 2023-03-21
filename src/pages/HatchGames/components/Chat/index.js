@@ -22,6 +22,13 @@ function Chat({client, roomConnected, userCountGlobal, userCountRoom}) {
     };
   }, [client, receivedMessages]);
 
+  useEffect(() => {
+    if(roomConnected === "") {
+      setReceivedMessages(r => {return {...r, room: []}})
+      setMessageChannel("global")
+    }
+  }, [roomConnected])
+
   const sendMessage = (e) => {
     e.preventDefault()
     

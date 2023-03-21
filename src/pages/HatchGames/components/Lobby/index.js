@@ -3,6 +3,7 @@ import Modal from '../../../../components/shared/Modal';
 import Input from '../../../../components/shared/Input';
 import RoomsContainer from './components/RoomsContainer'
 import './Lobby.scss';
+import { toast } from 'react-toastify';
 
 function Lobby({ client, choosenProject, setChoosenProject, setRoomConnected }) {
 
@@ -38,6 +39,7 @@ function Lobby({ client, choosenProject, setChoosenProject, setRoomConnected }) 
     client.emit("createRoom", { name: roomName, choosenProject }, (res) => {
       updateRooms()
       setModalCreate(false)
+      toast.success(`created Room ${roomName}`)
       joinRoom(res)
     })
   }
@@ -46,6 +48,7 @@ function Lobby({ client, choosenProject, setChoosenProject, setRoomConnected }) 
     console.log("joining ", room.name)
     client.emit("joinRoom", room.name, (res) => {
       setRoomConnected(res)
+      toast.info(`joined Room ${room.name}`)
     })
   }
 

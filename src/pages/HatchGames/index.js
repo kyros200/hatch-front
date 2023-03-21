@@ -106,7 +106,7 @@ function HatchGames() {
       }
 
       {isConnected && choosenProject && roomConnected && 
-      <GameRenderer client={client} roomConnected={roomConnected} setRoomConnected={setRoomConnected}/>
+      <GameRenderer client={client} clientInfo={clientInfo} roomConnected={roomConnected} setRoomConnected={setRoomConnected} userCountRoom={userCountRoom}/>
       }
 
       {isConnected &&

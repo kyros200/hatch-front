@@ -4,12 +4,14 @@
     margin: 0;
     background-image: linear-gradient($primary-dark, $primary);
     height: calc(100vh - 60px);
+
     > .roomInfo {
         display: flex;
         justify-content: space-between;
         flex-direction: column;
         box-sizing: border-box;
         padding: 0px 8px;
+        height: 30px;
 
         .announcer {
             color: white;
@@ -25,6 +27,29 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
+        }
+    }
+
+    > .gameContent {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100% - 30px);
+
+        > .prepRoomContent {
+            border: 1px solid black;
+            border-radius: 12px;
+            background-color: rgba(200, 200, 200, 0.7);
+            padding: 20px;
+            position: relative;
+    
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+    
+            @media screen and (max-width: $mobile) {
+                max-width: 80%;
+            }
         }
     }
 }

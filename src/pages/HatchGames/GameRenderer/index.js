@@ -1,18 +1,40 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import TicTacToe from './TicTacToe'
 import './GameRenderer.scss';
+import { toast } from 'react-toastify';
 
-function GameRenderer({ client, roomConnected }) {
+function GameRenderer({ client, clientInfo, roomConnected, setRoomConnected, userCountRoom }) {
+
+    const [announcerMessage, setAnnouncerMessage] = useState('Need more players to start...')
+    const [roomInfo, setRoomInfo] = useState({})
+    const [projectSuggestedPlayers, setProjectSuggestedPlayers] = useState(``)
 
     useEffect(() => {
-        // client.on('joinRoom', (res) => {
-        //     console.log(res)
-        // })
-
+        client.on('getRoomInfo', (res) => {
+            setRoomInfo(res)
+        })
+    
         return () => {
-            // client.off('joinRoom');
+          client.off('getRoomInfo');
         };
-    }, [client])
+      }, [client]);
+
+    useEffect(() => {
+        client.emit('getRoomInfo', roomConnected, (res) => {
+            setRoomInfo(res)
+            if(res.playersMinimum !== res.playersMaximum)
+                setProjectSuggestedPlayers(`${res.playersMinimum}-${res.playersMaximum}`)
+            else
+                setProjectSuggestedPlayers(`${res.playersMinimum}`)
+        })
+    }, [roomConnected, client])
+
+    useEffect(() => {
+        if(userCountRoom >= roomInfo.playersMinimum && userCountRoom <= roomInfo.playersMaximum)
+            setAnnouncerMessage("You can now start the game!")
+        else
+            setAnnouncerMessage("Need more players to start...")
+    }, [userCountRoom, roomInfo])
 
     const renderGame = () => {
         const game = roomConnected?.substring(0, 3)
@@ -21,25 +43,56 @@ function GameRenderer({ client, roomConnected }) {
             return <TicTacToe client={client}/>
         }
         else if(game.includes("reg")) {
-            return <>Work in Progress</>
+            return <>Yay! Started a Regente Game (WIP)</>
         }
         else return <>GAME CODE NOT FOUND!!!</>
+    }
+
+    const tryLeaveRoom = () => {
+        client.emit("leaveRoom", roomConnected, (res) => {
+            if(res) {
+                setRoomConnected("")
+                toast.info("Exited Room")
+            }
+            else toast.error("Something went wrong!")
+        })
+    }
+
+    const tryStartGame = () => {
+        client.emit("startGame", roomConnected, (res) => {
+            setRoomInfo(res)
+        })
     }
 
     return (
         <div className='gameContainer'>
             <div className="roomInfo">
                 <div className="actions">
-                    <button>Leave Room</button>
-                    <div className="announcer onlyDesktop">Announcer Desktop</div>
-                    <div>Manual</div>
+                    <button onClick={tryLeaveRoom}>Leave Room</button>
+                    <div className="announcer onlyDesktop">{announcerMessage}</div>
+                    <div>Manual(najjarPad)</div>
                 </div>
                 <div className="mobileAnnouncer onlyMobile">
-                    <div className="announcer">Announcer Mobile</div>
+                    <div className="announcer">{announcerMessage}</div>
                 </div>
             </div>
-            <div className="gameContent">
-                {renderGame()}
+            <div className='gameContent'>
+                {roomInfo.matchStatus === "NOT_STARTED" ?
+                <div className='prepRoomContent'>
+                    <p>{`${userCountRoom} Players Connected`}</p>
+                    <p>{`${projectSuggestedPlayers} Players Needed`}</p>
+                    {userCountRoom >= roomInfo.playersMinimum && userCountRoom <= roomInfo.playersMaximum ? 
+                        (clientInfo.user === roomInfo.createdByName ?
+                            <button onClick={tryStartGame}>START GAME</button>
+                        :<></>)
+                    :<></>}
+                </div>
+                : <></>}
+                {roomInfo.matchStatus === "STARTED" ?
+                <div className="">
+                    {renderGame()}
+                </div>
+                : <></>}
             </div>
         </div>
     );

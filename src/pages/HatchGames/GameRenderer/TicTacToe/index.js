@@ -4,7 +4,7 @@ import './TicTacToe.scss';
 function TicTacToe({ client }) {
     return (
         <div className=''>
-            you are finally inside a game!
+            Started TicTacToe Game!
         </div>
     );
 }
