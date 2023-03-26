@@ -29,4 +29,14 @@
             margin: 16px 0px;
         }
     }
+
+    .backToHatch {
+        margin-top: 12px;
+        width: auto;
+        align-self: center;
+
+        >.white {
+            color: white;
+        }
+    }
 }

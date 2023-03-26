@@ -5,8 +5,8 @@ const HeaderHatchGames = ({isConnected, callback}) => {
     return (
         <div className='headerGamesContainer'>
             <div className='content'>
-                <Link className='title' to="/">
-                    Hatch.
+                <Link className='title' to="/games">
+                    HatchGames.
                 </Link>
                 <div className='userInfo'>
                     {isConnected ? 

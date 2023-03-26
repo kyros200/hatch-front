@@ -1,7 +1,7 @@
 import InputMask from 'react-input-mask';
 import './Input.scss'
 
-const Input = ({id="aaa", label = "Label", onChange = ()=>{}, type = "free", ...rest }) => {
+const Input = ({id, label = "Label", onChange = ()=>{}, type = "free", ...rest }) => {
 
     const handleOnChange = (e) => {
         if(type === "text") {

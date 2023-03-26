@@ -1,8 +1,8 @@
 import './Hatch.scss';
 
-const Hatch = () => {
+const Hatch = ({ className }) => {
     return (
-        <span className='hatch'>Hatch.</span>
+        <span className={`hatch ${className}`}>Hatch.</span>
     )
 }
 

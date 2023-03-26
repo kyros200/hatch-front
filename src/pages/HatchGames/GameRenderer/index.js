@@ -13,11 +13,23 @@ function GameRenderer({ client, clientInfo, roomConnected, setRoomConnected, use
         client.on('getRoomInfo', (res) => {
             setRoomInfo(res)
         })
+
+        client.on('forcedLeaveRoom', () => {
+            //when host leaves room
+            client.emit("leaveRoom", roomConnected, false, (res) => {
+                if(res) {
+                    setRoomConnected("")
+                    toast.info("Host Exited and Ended the Room")
+                }
+                else toast.error("Something went wrong!")
+            })
+        })
     
         return () => {
           client.off('getRoomInfo');
+          client.off('forcedLeaveRoom');
         };
-      }, [client]);
+      }, [client, roomConnected, setRoomConnected]);
 
     useEffect(() => {
         client.emit('getRoomInfo', roomConnected, (res) => {
@@ -30,11 +42,15 @@ function GameRenderer({ client, clientInfo, roomConnected, setRoomConnected, use
     }, [roomConnected, client])
 
     useEffect(() => {
-        if(userCountRoom >= roomInfo.playersMinimum && userCountRoom <= roomInfo.playersMaximum)
-            setAnnouncerMessage("You can now start the game!")
+        if(userCountRoom >= roomInfo.playersMinimum && userCountRoom <= roomInfo.playersMaximum) {
+            if(clientInfo.user === roomInfo.createdByName)
+                setAnnouncerMessage("You can now start the game!")
+            else
+                setAnnouncerMessage(`Waiting Host (${roomInfo.createdByName}) to start the game!`)
+        }
         else
             setAnnouncerMessage("Need more players to start...")
-    }, [userCountRoom, roomInfo])
+    }, [userCountRoom, roomInfo, clientInfo])
 
     const renderGame = () => {
         const game = roomConnected?.substring(0, 3)
@@ -49,7 +65,8 @@ function GameRenderer({ client, clientInfo, roomConnected, setRoomConnected, use
     }
 
     const tryLeaveRoom = () => {
-        client.emit("leaveRoom", roomConnected, (res) => {
+        const isHost = clientInfo.user === roomInfo.createdByName
+        client.emit("leaveRoom", roomConnected, isHost, (res) => {
             if(res) {
                 setRoomConnected("")
                 toast.info("Exited Room")
@@ -92,6 +109,12 @@ function GameRenderer({ client, clientInfo, roomConnected, setRoomConnected, use
                 <div className="">
                     {renderGame()}
                 </div>
+                : <></>}
+                {roomInfo.matchStatus === "STARTED_DISCONNECT_ISSUE"?
+                    <>Recconect</>
+                : <></>}
+                {roomInfo.matchStatus === "ENDED"?
+                    <>Game End</>
                 : <></>}
             </div>
         </div>
