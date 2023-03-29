@@ -1,9 +1,10 @@
-// import { useState } from 'react';
-// import ReactLoading from 'react-loading';
 import LandingHero from './LandingHero'
-import LandingGames from './LandingGames'
+import LandingHatch from './LandingHatch'
+import LandingHatchGames from './LandingHatchGames'
+import LandingNajjarProjects from './LandingNajjarProjects'
 import LandingEntries from './LandingEntries'
-// import Modal from '../Modal';
+import AboutMe from './AboutMe'
+
 import './MainPage.scss';
 
 const MainPage = () => {
@@ -13,11 +14,12 @@ const MainPage = () => {
     return (
         <div className='landing-container'>
             <LandingHero />
+            <LandingHatch />
+            <LandingHatchGames />
+            <LandingNajjarProjects />
             <LandingEntries />
-            <LandingGames />
-            {/* <Modal open={isLoading}>
-                <ReactLoading type={"spin"} color="#2B912D" />
-            </Modal> */}
+            <AboutMe />
+            {/* <LandingGames /> */}
         </div>
     )
 }

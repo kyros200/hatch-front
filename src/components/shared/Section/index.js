@@ -5,6 +5,7 @@ const Section = ({ children, headerText, headerLine = false, to, footerText, foo
     return (
         <div className={`section-container ${className}`} style={{backgroundColor}}>
             <div className='content'>
+                {headerText || headerLine ?
                 <div className='header'>
                     {headerText}
                     {headerLine ?
@@ -12,6 +13,7 @@ const Section = ({ children, headerText, headerLine = false, to, footerText, foo
                     : <></>
                     }
                 </div>
+                :<></>}
                 {children}
                 {to && footerText ? 
                     <div className='footer'>

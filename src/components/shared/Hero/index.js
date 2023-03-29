@@ -1,15 +1,17 @@
 import './Hero.scss';
+import { TypeAnimation } from 'react-type-animation';
 
-const Hero = ({ mainText, children}) => {
+const Hero = ({ children }) => {
     return (
         <div className='landing-hero-container'>
             <div className='content'>
-                <div className='left'>
-                    {mainText}
-                </div>
-                <div className='right' to="/me">
-                    {children}
-                </div>
+                <TypeAnimation
+                    wrapper="div"
+                    speed={50}
+                    className = "left"
+                    repeat={Infinity}
+                    {...children}
+                />
             </div>
         </div>
     )

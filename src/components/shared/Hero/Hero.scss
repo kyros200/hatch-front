@@ -11,13 +11,14 @@
     .content {
         width: 1110px;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
 
         .left {
             width: 600px;
             font-size: 52px;
             color: $text-color;
+            text-align: center;
         }
 
         .right {
