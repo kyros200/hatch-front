@@ -19,12 +19,11 @@
             font-size: 52px;
             color: $text-color;
             text-align: center;
-        }
 
-        .right {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
+            @media screen and (max-width: $mobile) {
+                width: 95%;
+                font-size: 30px;
+            }
         }
     }
 }

@@ -16,7 +16,6 @@ const Footer = () => {
                     <div className='text'>
                         {new Date().getFullYear()} Made by Rafael Najjar
                     </div>
-                    <Link className={"button"} to="/error">About me</Link>
                 </div>
             </div>
         </div>

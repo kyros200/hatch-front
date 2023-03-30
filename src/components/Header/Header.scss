@@ -11,6 +11,10 @@
         justify-content: space-between;
         padding: 10px 0px;
 
+        @media screen and (max-width: $mobile) {
+            width: 95%;
+        }
+
         .title {
             font-family: 'Righteous', cursive;
             text-decoration: none;

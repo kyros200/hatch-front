@@ -35,16 +35,16 @@ const AboutMe = () => {
                         Feel free to reach me out on the following channels:
                     </p>
                     <div className="channels">
-                        <a href="https://www.google.com" target="_blank" rel="noreferrer" >
+                        <a href="https://www.linkedin.com/in/rafael-mendes-najjar-5a5b20138/" target="_blank" rel="noreferrer" >
                             <img src={Linkedin} alt="Linkedin" />
                         </a>
-                        <a href="https://www.google.com" target="_blank" rel="noreferrer" >
+                        <a href="https://github.com/kyros200" target="_blank" rel="noreferrer" >
                             <img src={Github} alt="Github" />
                         </a>
-                        <a href="https://www.google.com" target="_blank" rel="noreferrer" >
+                        <a href="mailto:rafaelnajjar@gmail.com" target="_blank" rel="noreferrer" >
                             <img src={Gmail} alt="Gmail" />
                         </a>
-                        <a href="https://www.google.com" target="_blank" rel="noreferrer" >
+                        <a href="https://patreon.com/Hatch666" target="_blank" rel="noreferrer" >
                             <img src={Patreon} alt="Patreon" />
                         </a>
                     </div>
