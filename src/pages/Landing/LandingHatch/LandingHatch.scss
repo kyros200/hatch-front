@@ -1,0 +1,95 @@
+@import '../../../variables';
+
+.landingHatchContent {
+    display: flex;
+    margin-top: 16px;
+
+    @media screen and (max-width: $mobile) {
+        flex-direction: column;
+        padding: 0px 12px;
+    }
+
+    >.right {
+        padding-left: 50px;
+
+        @media screen and (max-width: $mobile) {
+            padding: 0px;
+        }
+    }
+}
+
+.line {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &.firstLine {
+        > h2 {
+            padding-right: 16px;
+            font-family: 'Righteous', cursive;
+            font-size: 36px;
+            margin: 0;
+        }
+        > p {
+            font-size: 18px;
+            margin: 0;
+            padding-right: 8px;
+        }
+        > div {
+            width: 24px;
+            height: 24px;
+            > img {
+                width: 100%;
+            }
+        }
+    }
+
+    &.verbLine {
+        margin-bottom: 16px;
+        font-size: 14px;
+    }
+
+    &.definitionLine {
+        font-size: 20px;
+        font-style: italic;
+        font-weight: 400;
+    }
+
+    &.cambridgeLine {
+        font-size: 20px;
+        text-align: end;
+        justify-content: flex-end;
+        margin-bottom: 30px;
+
+        > div {
+            width: 50px;
+            margin-right: 16px;
+            border: 1px solid black;
+
+            @media screen and (max-width: $mobile) {
+                display: none;
+            }
+        }
+    }
+
+    &.hatchLine {
+        justify-content: center;
+        margin-bottom: 16px;
+
+        @media screen and (max-width: $mobile) {
+            flex-wrap: nowrap;
+            text-align: center;
+            padding: 0px 8px;
+        }
+
+        > .hatch {
+            font-size: 24px;
+            padding-bottom: 8px;
+            padding-right: 4px;
+
+            @media screen and (max-width: $mobile) {
+                display: contents;
+            }
+        }
+    }
+}
