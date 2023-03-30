@@ -2,7 +2,7 @@ import LandingHero from './LandingHero'
 import LandingHatch from './LandingHatch'
 import LandingHatchGames from './LandingHatchGames'
 import LandingNajjarProjects from './LandingNajjarProjects'
-import LandingEntries from './LandingEntries'
+// import LandingEntries from './LandingEntries'
 import AboutMe from './AboutMe'
 
 import './MainPage.scss';
@@ -17,7 +17,7 @@ const MainPage = () => {
             <LandingHatch />
             <LandingHatchGames />
             <LandingNajjarProjects />
-            <LandingEntries />
+            {/* <LandingEntries /> */}
             <AboutMe />
             {/* <LandingGames /> */}
         </div>

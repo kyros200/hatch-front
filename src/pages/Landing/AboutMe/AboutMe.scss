@@ -1,0 +1,77 @@
+@import '../../../variables';
+
+.aboutMeTitle {
+    font-size: 40px;
+    font-weight: 800;
+    margin-top: 16px;
+    margin-bottom: 16px;
+
+    @media screen and (max-width: $mobile) {
+        margin-bottom: 6px;
+    }
+}
+
+.aboutMeContent {
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (max-width: $mobile) {
+        flex-direction: column;
+    }
+
+    >.left {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding-left: 200px;
+
+        @media screen and (max-width: $mobile) {
+            padding-left: 0px;
+            padding: 20px 0px
+        }
+
+        >.image {
+            width: 200px;
+            
+            > img {
+                width: 100%;
+                border: 1px solid $primary;
+                border-radius: 100%;
+            }
+        }
+    }
+
+    > .right {
+        display: flex;
+        flex-direction: column;
+
+        padding-left: 60px;
+
+        @media screen and (max-width: $mobile) {
+            padding: 0px 20px 12px;
+        }
+
+        > p {
+            margin-top: 0;
+        }
+
+        >.channels {
+            display: flex;
+            justify-content: space-around;
+            padding-bottom: 24px;
+
+            > a {
+                width: 48px;
+
+                @media screen and (max-width: $mobile) {
+                    width: 36px;
+                }
+
+                > img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
