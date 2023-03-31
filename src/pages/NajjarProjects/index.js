@@ -63,18 +63,18 @@ const NajjarProjects = () => {
             <NajjarProjectSection
                 title={'Gaed'}
                 description={<span>My 2-Player Deckbuilding Card Game about defeating the enemy team. My most advanced and beloved boardgame prototype ever, with 80+ unique artworks.</span>}
-                buttonLabel={<span>Someday at <Hatch text="HatchGames." /></span>}
+                buttonLabel={<span>Soon at <Hatch text="HatchGames." /></span>}
                 backgroundColor={"#2B912D"}
             />
             <NajjarProjectSection
                 title={'3014'}
                 description={<span>My 1-4 Player cooperative boardgame about surviving a galatic trip back to earth</span>}
-                buttonLabel={<span>Someday at <Hatch text="HatchGames." /></span>}
+                buttonLabel={<span>Soon at <Hatch text="HatchGames." /></span>}
             />
             <NajjarProjectSection
                 title={'Regent'}
                 description={<span>My 1-player boardgame about surviving an fragile kingdom over 3 years until the legitimate heir is old enough to reign. </span>}
-                buttonLabel={<span>Someday at <Hatch text="HatchGames." /></span>}
+                buttonLabel={<span>Soon at <Hatch text="HatchGames." /></span>}
                 backgroundColor={"#2B918A"}
             />
             <Section

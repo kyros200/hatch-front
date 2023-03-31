@@ -21,7 +21,7 @@ const LandingHero = () => {
                 2000,
                 'Best way to define Myself is building a solution you could play.',
                 2000,
-                'Best way to define Myself is building a solution you could interact.',
+                'Best way to define Myself is building a solution you could interact with.',
                 2000,
             ],
             repeat: 0

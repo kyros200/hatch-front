@@ -35,7 +35,7 @@ const AboutMe = () => {
                         Feel free to reach me out on the following channels:
                     </p>
                     <div className="channels">
-                        <a href="https://www.linkedin.com/in/rafael-mendes-najjar-5a5b20138/" target="_blank" rel="noreferrer" >
+                        <a href="https://www.linkedin.com/in/rafaelnajjar/" target="_blank" rel="noreferrer" >
                             <img src={Linkedin} alt="Linkedin" />
                         </a>
                         <a href="https://github.com/kyros200" target="_blank" rel="noreferrer" >
