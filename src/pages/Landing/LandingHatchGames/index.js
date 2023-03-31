@@ -1,5 +1,6 @@
 import Hatch from '../../../components/shared/Hatch';
 import Section from '../../../components/shared/Section'
+import Button from '../../../components/shared/Button'
 import './LandingHatchGames.scss';
 
 const LandingHatchGames = () => {
@@ -16,7 +17,11 @@ const LandingHatchGames = () => {
                     <div className='text'>
                         BoardGame plataform to play in Real Time with friends. Everything developed by me.
                     </div>
-                    <button>Go to <Hatch text="HatchGames." /></button>
+                    <Button
+                        to="/games"
+                    >
+                        Go to <Hatch text="HatchGames." />
+                    </Button>
                 </div>
             </div>
         </Section>

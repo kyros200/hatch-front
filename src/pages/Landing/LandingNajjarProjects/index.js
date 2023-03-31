@@ -1,5 +1,6 @@
 import Hatch from '../../../components/shared/Hatch';
-import Section from '../../../components/shared/Section'
+import Section from '../../../components/shared/Section';
+import Button from '../../../components/shared/Button';
 import './LandingNajjarProjects.scss';
 
 const LandingNajjarProjects = () => {
@@ -16,7 +17,11 @@ const LandingNajjarProjects = () => {
                     <div className='text'>
                         Public projects with all kind of ideas. Sites, games, events and more.
                     </div>
-                    <button>Check out <Hatch text="NajjarProjects." /> page</button>
+                    <Button
+                        to="/NajjarProjects"
+                    >
+                        Check out <Hatch text="NajjarProjects." /> page
+                    </Button>
                 </div>
                 <div class="right onlyDesktop">
                     <Hatch text="NajjarProjects." />

@@ -1,0 +1,59 @@
+@import '../../../../variables.scss';
+
+.najjarProjectSection {
+    display: flex;
+    justify-content: space-between;
+    height: 300px;
+    box-sizing: border-box;
+
+    @media screen and (max-width: $mobile) {
+        flex-direction: column;
+        height: inherit;
+        justify-content: space-around;
+    }
+
+    >.left {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 50px;
+
+        @media screen and (max-width: $mobile) {
+            margin: 12px 0px 20px;
+        }
+    }
+
+    >.right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 600px;
+
+        @media screen and (max-width: $mobile) {
+            padding: 0px;
+            width: inherit;
+            text-align: center;
+        }
+
+        >.text {
+            font-size: 24px;
+            text-align: center;
+
+            @media screen and (max-width: $mobile) {
+                margin-bottom: 30px;
+                font-size: 22px;
+            }
+        }
+
+        >.button {
+            margin-top: 30px;
+
+            @media screen and (max-width: $mobile) {
+                margin-top: 0px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

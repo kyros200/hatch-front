@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Landing from './pages/Landing';
-import Entries from './pages/Entries';
+import NajjarProjects from './pages/NajjarProjects';
 import Error from './pages/Error';
 import HatchGames from './pages/HatchGames';
 import PageLayout from './layouts/PageLayout';
@@ -33,10 +33,8 @@ ReactDOM.render(
         <Routes>
           <Route path="/" element={<PageLayout />}>
             <Route index element={<Landing />} />
-            <Route path="entries" element={<Entries />} />
+            <Route path="NajjarProjects" element={<NajjarProjects />} />
             <Route path="error" element={<Error />} />
-            <Route path="me" element={<>About Me</>} />
-            <Route path="about" element={<>About Hatch</>} />
           </Route>
           <Route path="/games" element={<HatchGames />} />
         </Routes>
