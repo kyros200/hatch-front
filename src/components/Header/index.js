@@ -1,4 +1,5 @@
 import Link from '../shared/Link'
+import Hatch from '../shared/Hatch'
 import './Header.scss'
 
 const Header = () => {
@@ -9,7 +10,7 @@ const Header = () => {
                     Hatch.
                 </Link>
                 <div className='buttons'>
-                    <Link to="/games">HatchGames</Link> 
+                    <Link to="/games">Go to <Hatch text="HatchGames." /></Link> 
                 </div>
             </div>
         </div>

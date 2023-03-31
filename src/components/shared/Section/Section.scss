@@ -11,6 +11,10 @@
         display: flex;
         flex-direction: column;
 
+        @media screen and (max-width: $mobile) {
+            width: 95%;
+        }
+
         .header {
             font-size: 40px;
             font-weight: 800;
