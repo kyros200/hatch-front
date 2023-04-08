@@ -9,7 +9,8 @@ function Modal({open, children, ...rest}) {
             bottom: 'auto',
             marginRight: '-50%',
             transform: 'translate(-50%, -50%)',
-            borderRadius: "16px",
+            borderRadius: '0px',
+            boxShadow: '5px 5px',
             maxHeight: "90%",
             maxWidth: "90%"
         }
