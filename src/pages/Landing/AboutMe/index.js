@@ -5,6 +5,7 @@ import Linkedin from './images/linkedin.svg'
 import Github from './images/github.svg'
 import Gmail from './images/gmail.svg'
 import Patreon from './images/patreon.svg'
+import Twitch from './images/twitch.svg'
 
 import './AboutMe.scss';
 
@@ -40,6 +41,9 @@ const AboutMe = () => {
                         </a>
                         <a href="https://github.com/kyros200" target="_blank" rel="noreferrer" >
                             <img src={Github} alt="Github" />
+                        </a>
+                        <a href="https://www.twitch.tv/casualnajjar" target="_blank" rel="noreferrer" >
+                            <img src={Twitch} alt="Twitch" />
                         </a>
                         <a href="mailto:rafaelnajjar@gmail.com" target="_blank" rel="noreferrer" >
                             <img src={Gmail} alt="Gmail" />

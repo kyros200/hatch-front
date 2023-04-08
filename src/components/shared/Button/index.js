@@ -4,9 +4,9 @@ import './Button.scss'
 const Button = ({children, className="", onClick, to, ...rest}) => {
     const navigate = useNavigate()
     return (
-    <div className={`button ${className}`} onClick={ onClick ? onClick : () => to.includes("https://") ? window.open(to, '_blank').focus() : navigate(to)} {...rest}>
+    <button className={`button ${className}`} onClick={ onClick ? onClick : () => to.includes("https://") ? window.open(to, '_blank').focus() : navigate(to)} {...rest}>
         {children}
-    </div>
+    </button>
     )
 }
 
