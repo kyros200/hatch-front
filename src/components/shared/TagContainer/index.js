@@ -9,7 +9,7 @@ const TagContainer = ({tags}) => {
     }
 
     return (
-        <div className='tags'>
+        <div className='tagsNajjar'>
             {renderTags()}
         </div>
     )

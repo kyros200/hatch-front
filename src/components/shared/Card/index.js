@@ -4,7 +4,7 @@ import './Card.scss'
 const Card = ({children, className="", to, ...rest}) => {
     const navigate = useNavigate()
     return (
-    <div className={`card ${className}`} onClick={() => to && navigate(to)} {...rest}>
+    <div className={`cardNajjar ${className}`} onClick={() => to && navigate(to)} {...rest}>
         {children}
     </div>
     )

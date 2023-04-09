@@ -26,8 +26,8 @@ const Input = ({id, label = "Label", onChange = ()=>{}, type = "free", ...rest }
     }
 
     return (
-        <div className='input'>
-            <label htmlFor={id}>{label}</label>
+        <div className='inputNajjar'>
+            {label ? <label htmlFor={id}>{label}</label> : <></>}
             {renderInput()}
         </div>
     )

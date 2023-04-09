@@ -24,7 +24,7 @@ const logoConsoles = {
 
 const Logo = ({ console, className }) => {
     return (
-        <div className={`logo_console ${className}`}>
+        <div className={`logoConsole ${className}`}>
             <img src={logoConsoles[console]} alt={`Logo ${console}`}/>
         </div>
     )
