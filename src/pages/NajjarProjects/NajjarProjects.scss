@@ -1,8 +1,10 @@
 @import '../../variables';
 
 .najjarPrototype {
-    >.left {
-        font-size: 38px;
+    @media screen and (max-width: $mobile) {
+        >.left {
+            font-size: 38px;
+        }
     }
 }
 

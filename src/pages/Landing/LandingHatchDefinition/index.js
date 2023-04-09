@@ -1,9 +1,8 @@
 import Section from '../../../components/shared/Section'
-import Hatch from '../../../components/shared/Hatch'
 import SoundImage from './images/sound.svg';
-import './LandingHatch.scss';
+import './LandingHatchDefinition.scss';
 
-const LandingHatch = () => {
+const LandingHatchDefinition = () => {
 
     const play = () => {
         const audio = document?.getElementById("hatchAudio");
@@ -14,7 +13,7 @@ const LandingHatch = () => {
         <Section
             backgroundColor='#eeffee'
         >
-            <div className="landingHatchContent">
+            <div className="landingHatchDefinitionContent">
                 <div class="left">
                     <div className='line firstLine'>
                         <h2>Hatch.</h2>
@@ -38,11 +37,8 @@ const LandingHatch = () => {
                     </div>
                 </div>
             </div>
-            <div className='line hatchLine'>
-                <Hatch className="hatch" /> is the Hub of everything mine, to let them flourish as it should be.
-            </div>
         </Section>
     )
 }
 
-export default LandingHatch;
+export default LandingHatchDefinition;

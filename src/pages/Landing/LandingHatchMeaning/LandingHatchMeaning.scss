@@ -1,0 +1,29 @@
+@import '../../../variables';
+
+.landingHatchMeaningContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    color: $text-color;
+    margin-bottom: 16px;
+    height: 150px;
+    font-size: 28px;
+
+    @media screen and (max-width: $mobile) {
+        flex-wrap: nowrap;
+        text-align: center;
+        padding: 12px 8px;
+        height: inherit;
+    }
+
+    > .hatch {
+        font-size: 44px;
+        padding-bottom: 8px;
+        padding-right: 4px;
+
+        @media screen and (max-width: $mobile) {
+            display: contents;
+        }
+    }
+}

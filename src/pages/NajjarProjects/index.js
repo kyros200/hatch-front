@@ -3,8 +3,13 @@ import Section from '../../components/shared/Section'
 import Hatch from '../../components/shared/Hatch'
 import NajjarProjectSection from './components/NajjarProjectSection'
 import './NajjarProjects.scss'
+import { useEffect } from 'react'
 
 const NajjarProjects = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     const listTexts = 
     [
         {

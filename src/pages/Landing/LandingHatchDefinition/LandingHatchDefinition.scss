@@ -1,7 +1,8 @@
 @import '../../../variables';
 
-.landingHatchContent {
+.landingHatchDefinitionContent {
     display: flex;
+    justify-content: space-between;
     margin-top: 16px;
 
     @media screen and (max-width: $mobile) {
@@ -68,27 +69,6 @@
 
             @media screen and (max-width: $mobile) {
                 display: none;
-            }
-        }
-    }
-
-    &.hatchLine {
-        justify-content: center;
-        margin-bottom: 16px;
-
-        @media screen and (max-width: $mobile) {
-            flex-wrap: nowrap;
-            text-align: center;
-            padding: 0px 8px;
-        }
-
-        > .hatch {
-            font-size: 24px;
-            padding-bottom: 8px;
-            padding-right: 4px;
-
-            @media screen and (max-width: $mobile) {
-                display: contents;
             }
         }
     }

@@ -1,7 +1,7 @@
 import LandingHero from './LandingHero'
-import LandingHatch from './LandingHatch'
-import LandingHatchGames from './LandingHatchGames'
-import LandingNajjarProjects from './LandingNajjarProjects'
+import LandingHatchDefinition from './LandingHatchDefinition'
+import LandingHatchMeaning from './LandingHatchMeaning'
+import LandingFeatures from './LandingFeatures'
 // import LandingEntries from './LandingEntries'
 import AboutMe from './AboutMe'
 
@@ -14,9 +14,9 @@ const MainPage = () => {
     return (
         <div className='landing-container'>
             <LandingHero />
-            <LandingHatch />
-            <LandingHatchGames />
-            <LandingNajjarProjects />
+            <LandingHatchDefinition />
+            <LandingHatchMeaning />
+            <LandingFeatures />
             {/* <LandingEntries /> */}
             <AboutMe />
             {/* <LandingGames /> */}
