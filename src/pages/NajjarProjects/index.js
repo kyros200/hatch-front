@@ -5,6 +5,7 @@ import NajjarDoc from '../../components/shared/NajjarDoc'
 import NajjarProjectSection from './components/NajjarProjectSection'
 import './NajjarProjects.scss'
 import NajjarDocWhite from '../../components/shared/NajjarDoc/NajjarDocWhite.svg'
+import JLFLogo from './images/logoJLF.png'
 import { useEffect, useState } from 'react'
 
 const NajjarProjects = () => {
@@ -90,11 +91,12 @@ const NajjarProjects = () => {
                     backgroundColor={"#2B918A"}
                 />
                 <NajjarProjectSection
-                    title={'JLF'}
-                    description={<span>My Monthly event with friends to play boardgames</span>}
-                    buttonLabel={<span>Check JLF Instagram!</span>}
+                    title={<img src={JLFLogo} alt="JLF" />}
+                    description={<span>My Monthly event with friends to play boardgames!</span>}
+                    buttonLabel={<span>(pt-br) Check JLF Instagram!</span>}
                     to={'https://www.instagram.com/jlf.boardgame/'}
                     className="jlf"
+                    classNameContent="jlfContent"
                 />
                 <NajjarProjectSection
                     title={'Gaed'}

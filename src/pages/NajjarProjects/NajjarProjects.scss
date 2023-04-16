@@ -2,8 +2,10 @@
 
 .najjarPrototype {
     @media screen and (max-width: $mobile) {
-        >.left {
-            font-size: 38px;
+        >.najjarProjectSectionContent {
+            >.left {
+                font-size: 34px;
+            }
         }
     }
 }
@@ -16,6 +18,37 @@
     }
 }
 
-// .jlf {
-//     background-image: url('./images/estampaJLF.png');
-// }
+.jlf {
+    background-image: url('./images/estampaJLFInfinita.png');
+
+    background-size: contain;
+
+    
+    >.jlfContent {
+        background-color: #2B912DEA;
+
+        border: 2px solid black;
+
+        padding: 12px;
+
+        @media screen and (max-width: $mobile) {
+            padding: 0px;
+        }
+
+        >.left {
+            padding-left: 100px;
+            >img {
+                width: 250px;
+                height: auto;
+            }
+
+            @media screen and (max-width: $mobile) {
+                padding: 0px;
+                >img {
+                    width: 200px;
+                    height: auto;
+                }
+            }
+        }
+    }
+}
