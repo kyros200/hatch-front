@@ -3,11 +3,17 @@
 .landingHatchDefinitionContent {
     display: flex;
     justify-content: space-between;
-    margin-top: 16px;
+    padding: 60px 0;
 
     @media screen and (max-width: $mobile) {
         flex-direction: column;
-        padding: 0px 12px;
+        padding: 40px 12px;
+    }
+
+    >.left {
+        @media screen and (max-width: $mobile) {
+            padding-bottom: 20px;
+        }   
     }
 
     >.right {
@@ -28,13 +34,13 @@
         > h2 {
             padding-right: 16px;
             font-family: 'Righteous';
-            font-size: 36px;
+            font-size: 56px;
             margin: 0;
         }
         > p {
             font-size: 18px;
             margin: 0;
-            padding-right: 8px;
+            padding-right: 12px;
         }
         > div {
             width: 24px;
@@ -46,7 +52,6 @@
     }
 
     &.verbLine {
-        margin-bottom: 16px;
         font-size: 14px;
     }
 
@@ -60,7 +65,6 @@
         font-size: 20px;
         text-align: end;
         justify-content: flex-end;
-        margin-bottom: 30px;
 
         > div {
             width: 50px;

@@ -5,7 +5,7 @@ const NajjarProjectSection = ({ title="Title", description, renderBottom, button
     return (
         <div className={`najjarProjectSection ${className}`} {...rest}>
             <div className={`najjarProjectSectionContent ${classNameContent}`}>
-                <div class="left">
+                <div className="left">
                     {title}
                 </div>
                 <div className="right">

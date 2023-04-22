@@ -28,6 +28,9 @@ function NajjarDoc({open, onClose = () => {console.log("You didn't put a onClose
                         setMarkdown(`Pad "*${renderedEndpoint}*" not found. Are you sure you are pointing to the right one?`)
                     }
                     setIsLoading(false);
+                })
+                .catch((e) => {
+                    throw(new Error(e))
                 });
             }
             catch(e) {

@@ -11,7 +11,7 @@ const LandingFeatures = () => {
             className="landingFeaturesContainer"
         >
             <div className="landingFeaturesContent">
-                <div class="left">
+                <div className="left">
                     <Hatch text="HatchGames." />
                 </div>
                 <div className="right">
@@ -27,7 +27,7 @@ const LandingFeatures = () => {
             </div>
             
             <div className="landingFeaturesContent">
-                <div class="left">
+                <div className="left">
                     <Hatch text="NajjarProjects." />
                 </div>
                 <div className="right">

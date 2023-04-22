@@ -14,7 +14,7 @@ const LandingHatchDefinition = () => {
             backgroundColor='#eeffee'
         >
             <div className="landingHatchDefinitionContent">
-                <div class="left">
+                <div className="left">
                     <div className='line firstLine'>
                         <h2>Hatch.</h2>
                         <p>/hætʃ/</p>

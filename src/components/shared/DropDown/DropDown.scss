@@ -1,0 +1,53 @@
+@import '../../../variables.scss';
+
+.dropDownNajjar {
+    box-sizing: border-box;
+    box-shadow: 5px 5px;
+    margin: 20px 0px;
+    color: $text-color-black;
+    background-color: white;
+    
+    >.dropdownTitle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+
+        >.title {
+            font-size: 38px;
+            box-sizing: border-box;
+        }
+
+        >.arrow {
+            font-size: 38px;
+            transform: rotate(-90deg);
+            transition: transform 0.3s ease-in-out;
+            &.rotate {
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    >.dropdownContent {
+        font-size: 20px;
+        padding: 0 20px;
+        padding-top: 0px;
+        line-height: 24px;
+        overflow-y: auto;
+        transition: max-height 0.3s ease-in-out, margin 0.3s ease-in-out, padding 0.3s ease-in-out;
+        max-height: 0;
+        * {
+          visibility: hidden;
+        }
+
+        &.show {
+            transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+            padding-bottom: 20px;
+            margin-bottom: 11px;
+            max-height: 300px;
+            * {
+            visibility: visible;
+            }
+        }
+    }
+}
