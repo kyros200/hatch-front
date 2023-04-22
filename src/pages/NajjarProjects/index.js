@@ -51,8 +51,12 @@ const NajjarProjects = () => {
 
     const najjarHatchData = [
         {
-            label:"About",
+            label:<>About <Hatch /></>,
             endpoint: "/hatch"
+        },
+        {
+            label:<>About <Hatch text="HatchGames." /></>,
+            endpoint: "/hatchgames"
         },
         {
             label:"Design",

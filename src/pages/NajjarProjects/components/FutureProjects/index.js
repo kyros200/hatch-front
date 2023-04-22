@@ -31,6 +31,24 @@ const FutureProjects = ({ title="Title", description, renderBottom, buttonLabel,
                         }
                     />
                     <DropDown 
+                        title={<Hatch text="NajjarCourse." />}
+                        content={
+                            <div>
+                                <div>
+                                    Another big project of mine to create a free platform for a FullStack course. Completely from zero, I'm going to focus on the theoric view of Web Development, what developers nowadays is lacking of, because with core concepts they will learn how to learn more.
+                                </div>
+                                <br/>
+                                <div>
+                                    <Hatch text="HatchCourse." /> will be a huge project, but I'm sure that someday I'll finally have a prototype to show you. Currently, I have the course path and have been showing on my Twitch, but the plan here is to create decent material (videos) about the topics that I want to touch.
+                                </div>
+                                <br/>
+                                <div>
+                                    <Hatch text="HatchCourse." /> will be integrated to <Hatch text="NajjarLogin." />, so it is expected to have a social aspect for the users to help each other and ways to follow your growth.
+                                </div>
+                            </div>
+                        }
+                    />
+                    <DropDown 
                         title={"Element Gourmet"}
                         content={
                             <div>
