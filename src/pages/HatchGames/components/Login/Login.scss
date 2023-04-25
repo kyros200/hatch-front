@@ -6,12 +6,13 @@
     height: calc(100vh - 60px);
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    .loginContent {
-        border: 1px solid black;
-        border-radius: 12px;
+    >.loginContent {
+        box-sizing: border-box;
+        box-shadow: 5px 5px;
         background-color: rgba(200, 200, 200, 0.7);
         padding: 20px;
 
@@ -30,13 +31,10 @@
         }
     }
 
-    .backToHatch {
-        margin-top: 12px;
+    >.backToHatch {
+        margin-top: 20px;
         width: auto;
         align-self: center;
-
-        >.white {
-            color: white;
-        }
+        color: white;
     }
 }

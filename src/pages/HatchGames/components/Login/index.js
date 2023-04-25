@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Input from '../../../../components/shared/Input';
 import Link from '../../../../components/shared/Link'
 import Hatch from '../../../../components/shared/Hatch'
+import Button from '../../../../components/shared/Button'
 import './Login.scss';
 
 function Login({client, callback, setIsLoading}) {
@@ -24,11 +25,11 @@ function Login({client, callback, setIsLoading}) {
             <h2>Login</h2>
             <Input id="login" className={"loginInput"} value={user} label={"username"} onChange={(e) => setUser(e.target.value)} />
             <Input id="pass" className={"loginInput"} value={pass} label={"password (type '1' to access)"} onChange={(e) => setPass(e.target.value)} />
-            <button onClick={ tryConnect }>Connect</button>
-            <Link className='backToHatch' to="/">
-              {`< Go back to`} <Hatch className='white' />
-            </Link>
+            <Button onClick={ tryConnect }>Connect</Button>
         </div>
+        <Link className='backToHatch' to="/">
+          {`< Go back to `}<Hatch />
+        </Link>
     </div>
   );
 }

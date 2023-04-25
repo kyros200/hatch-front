@@ -21,6 +21,7 @@ const Loader = ({ introText, mainText, show }) => {
       aria-hidden={!show}
       className={`section-loader ${show ? "show" : "hide"}`}
     >
+      <ReactLoading className="gif" type={"spin"} color="#2B6535" />
       {introText && (
         <h1 className="text">
           {introText}
@@ -31,7 +32,6 @@ const Loader = ({ introText, mainText, show }) => {
           {handleAriaHidden(mainText)}
         </h2>
       )}
-      <ReactLoading type={"spin"} color="#2B6535" />
     </section>
   )
 }
