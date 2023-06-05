@@ -1,13 +1,49 @@
 import React, { useEffect, useState } from 'react';
 import TicTacToe from './TicTacToe'
+import Button from '../../../components/shared/Button'
+import NajjarDoc from '../../../components/shared/NajjarDoc'
 import './GameRenderer.scss';
 import { toast } from 'react-toastify';
+
+import NajjarDocWhite from '../../../components/shared/NajjarDoc/NajjarDocWhite.svg'
 
 function GameRenderer({ client, clientInfo, roomConnected, setRoomConnected, userCountRoom }) {
 
     const [announcerMessage, setAnnouncerMessage] = useState('Need more players to start...')
     const [roomInfo, setRoomInfo] = useState({})
+    const [najjarHatchModal, setNajjarHatchModal] = useState(false)
     const [projectSuggestedPlayers, setProjectSuggestedPlayers] = useState(``)
+
+    const gameData = {
+        tic: [
+            {
+                label:"Rules",
+                endpoint: "/tictactoe"
+            },
+            {
+                label:"Design",
+                endpoint: "/tictactoe/design"
+            },
+            {
+                label:"Patch Notes",
+                endpoint: "/tictactoe/patchNotes"
+            },
+        ],
+        reg: [
+            {
+                label:"Rules",
+                endpoint: "/regente"
+            },
+            {
+                label:"Design",
+                endpoint: "/regente/design"
+            },
+            {
+                label:"Patch Notes",
+                endpoint: "/regente/patchNotes"
+            },
+        ]
+    }
 
     useEffect(() => {
         client.on('getRoomInfo', (res) => {
@@ -85,9 +121,9 @@ function GameRenderer({ client, clientInfo, roomConnected, setRoomConnected, use
         <div className='gameContainer'>
             <div className="roomInfo">
                 <div className="actions">
-                    <button onClick={tryLeaveRoom}>Leave Room</button>
+                    <Button onClick={tryLeaveRoom}>Leave Room</Button>
                     <div className="announcer onlyDesktop">{announcerMessage}</div>
-                    <div>Manual(najjarPad)</div>
+                    <img className="najjarDocButton" src={NajjarDocWhite} alt="NajjarDoc." onClick={() => setNajjarHatchModal(true)}/>
                 </div>
                 <div className="mobileAnnouncer onlyMobile">
                     <div className="announcer">{announcerMessage}</div>
@@ -100,7 +136,7 @@ function GameRenderer({ client, clientInfo, roomConnected, setRoomConnected, use
                     <p>{`${projectSuggestedPlayers} Players Needed`}</p>
                     {userCountRoom >= roomInfo.playersMinimum && userCountRoom <= roomInfo.playersMaximum ? 
                         (clientInfo.user === roomInfo.createdByName ?
-                            <button onClick={tryStartGame}>START GAME</button>
+                            <Button onClick={tryStartGame}>START GAME</Button>
                         :<></>)
                     :<></>}
                 </div>
@@ -117,6 +153,11 @@ function GameRenderer({ client, clientInfo, roomConnected, setRoomConnected, use
                     <>Game End</>
                 : <></>}
             </div>
+            <NajjarDoc 
+                open={najjarHatchModal}
+                onClose={() => setNajjarHatchModal(false)}
+                data={gameData[roomConnected?.substring(0, 3)]}
+            />
         </div>
     );
 }

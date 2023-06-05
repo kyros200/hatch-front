@@ -27,6 +27,11 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
+            align-items: center;
+
+            >.najjarDocButton {
+                cursor: pointer;
+            }
         }
     }
 
@@ -37,8 +42,8 @@
         height: calc(100% - 30px);
 
         > .prepRoomContent {
-            border: 1px solid black;
-            border-radius: 12px;
+            box-sizing: border-box;
+            box-shadow: 5px 5px;
             background-color: rgba(200, 200, 200, 0.7);
             padding: 20px;
             position: relative;

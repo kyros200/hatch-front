@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Button from '../../../../components/shared/Button'
 import './Chat.scss'
 
 function Chat({client, roomConnected, userCountGlobal, userCountRoom}) {
@@ -46,10 +47,10 @@ function Chat({client, roomConnected, userCountGlobal, userCountRoom}) {
     <div className={`chatContainer ${isOpen ? "open" : ""}`}>
       <div className={`chatOpenerButton ${isOpen ? "open" : ""}`} onClick={ () => setIsOpen(!isOpen) }>{`${isOpen ? "Close" : "Open"} Chat`}</div>
       <div className={`chatWrapper ${isOpen ? "open" : ""}`}>
-        {/* <button onClick={ () => setMessageChannel("user") }>{`User`}</button> */}
-        {roomConnected && <button onClick={ () => setMessageChannel("room") }>{`Room(${userCountRoom})`}</button>}
-        <button onClick={ () => setMessageChannel("global") }>{`Global(${userCountGlobal})`}</button>
-        <p>{`Channel: ${messageChannel}${roomConnected && messageChannel === "room" ? ` (${roomConnected})` : ""}`}</p>
+        {/* <Button className="activeChannelButton" onClick={ () => setMessageChannel("user") }>{`User`}</Button> */}
+        {roomConnected && <Button className="activeChannelButton" onClick={ () => setMessageChannel("room") }>{`Room(${userCountRoom})`}</Button>}
+        <Button className="activeChannelButton" onClick={ () => setMessageChannel("global") }>{`Global(${userCountGlobal})`}</Button>
+        <p className="messageActiveChannel">{`Channel: ${messageChannel}${roomConnected && messageChannel === "room" ? ` (${roomConnected})` : ""}`}</p>
         <div className='messageContainer'>
           {receivedMessages[messageChannel].map((message, index) => {
             return (
@@ -61,7 +62,7 @@ function Chat({client, roomConnected, userCountGlobal, userCountRoom}) {
         </div>
         <form className='chatForm' onSubmit={sendMessage}>
           <input autoFocus={isOpen} className='sendInput' value={message} onChange={(e) => setMessage(e.target.value)} />
-          <button className='sendButton' tyoe="submit">Send</button>
+          <Button className='sendButton' tyoe="submit">Send</Button>
         </form>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useCallback} from 'react';
 import Modal from '../../../../components/shared/Modal';
 import Input from '../../../../components/shared/Input';
+import Button from '../../../../components/shared/Button';
 import RoomsContainer from './components/RoomsContainer'
 import './Lobby.scss';
 import { toast } from 'react-toastify';
@@ -64,13 +65,13 @@ function Lobby({ client, choosenProject, setChoosenProject, setRoomConnected }) 
             X
           </div>
           <RoomsContainer rooms={rooms} joinRoom={joinRoom}/>
-          <button onClick={ openCreateModal }>Create Room</button>
+          <Button onClick={ openCreateModal }>Create Room</Button>
           <Modal
             open={modalCreate}
           >
-            <button onClick={ () => setModalCreate(false) }>Close</button>
-            <Input className={"modalInput"} value={roomName} label={"Name"} onChange={(e) => setRoomName(e.target.value)} />
-            <button onClick={ createRoom }>Create room</button>
+            <Input className={"modalInput"} value={roomName} label={"Room Name"} onChange={(e) => setRoomName(e.target.value)} />
+            <Button className={"modalButton"} onClick={ createRoom }>Create Room</Button>
+            <Button className={"modalButton"} onClick={ () => setModalCreate(false) }>Close</Button>
           </Modal>
         </div>
     </div>
