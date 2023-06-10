@@ -92,7 +92,7 @@ function GameRenderer({ client, clientInfo, roomConnected, setRoomConnected, use
         const game = roomConnected?.substring(0, 3)
 
         if(game.includes("tic")) {
-            return <TicTacToe client={client}/>
+            return <TicTacToe client={client} clientInfo={clientInfo} roomInfo={roomInfo} setAnnouncerMessage={setAnnouncerMessage}/>
         }
         else if(game.includes("reg")) {
             return <>Yay! Started a Regente Game (WIP)</>
@@ -142,9 +142,7 @@ function GameRenderer({ client, clientInfo, roomConnected, setRoomConnected, use
                 </div>
                 : <></>}
                 {roomInfo.matchStatus === "STARTED" ?
-                <div className="">
-                    {renderGame()}
-                </div>
+                    renderGame()
                 : <></>}
                 {roomInfo.matchStatus === "STARTED_DISCONNECT_ISSUE"?
                     <>Recconect</>
