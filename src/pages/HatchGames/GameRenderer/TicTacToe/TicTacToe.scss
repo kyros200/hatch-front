@@ -27,4 +27,14 @@
             }
         }   
     }
+
+    >.tictactoeHistoryMenu {
+        margin-top: 12px;
+        display: flex;
+        align-items: center;
+        >button {
+            margin: 0px 6px;
+            padding: 6px;
+        }
+    }
 }
