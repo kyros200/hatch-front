@@ -151,14 +151,14 @@ const NajjarProjects = () => {
                 />
                 <NajjarProjectSection
                     title={'Gaed'}
-                    description={<span>My 2-Player Deckbuilding Card Game about defeating the enemy team. My most advanced and beloved boardgame prototype ever, with 80+ unique artworks.</span>}
+                    description={<span>My 2-Player Deckbuilding Card Game about defeating the enemy team. My most advanced and beloved boardgame prototype ever, with 80+ unique artworks. Avaiable on TableTop Simulator!</span>}
                     buttonLabel={<span>Soon at <Hatch text="HatchGames." /></span>}
                     backgroundColor={"#2B912D"}
                     to="https://hatch.najjar.dev/games"
                 />
                 <NajjarProjectSection
                     title={'3014'}
-                    description={<span>My 1-4 Player cooperative boardgame about surviving a galatic trip back to earth</span>}
+                    description={<span>My 1-4 Player cooperative boardgame about surviving a galatic trip back to Earth. Avaiable on TableTop Simulator!</span>}
                     buttonLabel={<span>Soon at <Hatch text="HatchGames." /></span>}
                     to="https://hatch.najjar.dev/games"
                 />

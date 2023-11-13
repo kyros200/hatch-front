@@ -57,7 +57,7 @@ const FutureProjects = ({ title="Title", description, renderBottom, buttonLabel,
                                 </div>
                                 <br/>
                                 <div>
-                                    Someday it'll be at <Hatch text="HatchGames." />, after Regent and Gaed.
+                                    Someday it'll be at <Hatch text="HatchGames." />, after Regent, Gaed and 3014.
                                 </div>
                             </div>
                         }

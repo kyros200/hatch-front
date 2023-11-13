@@ -24,7 +24,7 @@ const AboutMe = () => {
                         About Me
                     </div>
                     <p>
-                        I'm <b>Rafael Najjar</b> and nowadays I am a FrontEnd Developer, but I love to study and practice with new projects.
+                        I'm <b>Rafael Najjar</b> and nowadays I am a FullStack Developer, but I love to study and practice with new projects.
                     </p>
                     <p>
                         I try to be a creator whenever I can. I like new challenges for whatever subject it comes, and how to solve problems with the power of creation. Thats why as a developer I do not only create sites, but solutions.
