@@ -1,0 +1,24 @@
+@import '../../../../variables.scss';
+
+.futureProjectsContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    >.title, >.subTitle {
+        color: white;
+        text-align: center;
+    }
+
+    >.title {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-size: 38px;
+    }
+
+    >.subTitle {
+        padding-bottom: 40px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+}

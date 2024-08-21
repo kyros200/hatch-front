@@ -2,11 +2,10 @@ import Hero from '../../components/shared/Hero'
 import Section from '../../components/shared/Section'
 import Hatch from '../../components/shared/Hatch'
 import NajjarDoc from '../../components/shared/NajjarDoc'
-import NajjarProjectSection from './components/NajjarProjectSection'
+import NajjarProjectSection from '../../components/NajjarProjectSection'
 import FutureProjects from './components/FutureProjects'
 import './NajjarProjects.scss'
 import NajjarDocWhite from '../../components/shared/NajjarDoc/NajjarDocWhite.svg'
-import JLFLogo from './images/logoJLF.png'
 import { useEffect, useState } from 'react'
 
 const NajjarProjects = () => {
@@ -74,10 +73,6 @@ const NajjarProjects = () => {
             sequence: [
                 'NajjarProjects. is the way that I want to show you my sites.',
                 2000,
-                'NajjarProjects. is the way that I want to show you my games.',
-                2000,
-                'NajjarProjects. is the way that I want to show you my events.',
-                2000,
                 'NajjarProjects. is the way that I want to show you my projects.',
                 2000,
                 'NajjarProjects. is the way that I want to show you my life.',
@@ -140,34 +135,6 @@ const NajjarProjects = () => {
                         <img className="najjarDocButton" src={NajjarDocWhite} alt="NajjarDoc." onClick={() => setNajjarLoginModal(true)}/>
                     }
                     className="najjarDoc"
-                />
-                <NajjarProjectSection
-                    title={<img src={JLFLogo} alt="JLF" />}
-                    description={<span>My Monthly event with friends to play boardgames!</span>}
-                    buttonLabel={<span>(pt-br) Check JLF Instagram!</span>}
-                    to={'https://www.instagram.com/jlf.boardgame/'}
-                    className="jlf"
-                    classNameContent="jlfContent"
-                />
-                <NajjarProjectSection
-                    title={'Gaed'}
-                    description={<span>My 2-Player Deckbuilding Card Game about defeating the enemy team. My most advanced and beloved boardgame prototype ever, with 80+ unique artworks. Avaiable on TableTop Simulator!</span>}
-                    buttonLabel={<span>Soon at <Hatch text="HatchGames." /></span>}
-                    backgroundColor={"#2B912D"}
-                    to="https://hatch.najjar.dev/games"
-                />
-                <NajjarProjectSection
-                    title={'3014'}
-                    description={<span>My 1-4 Player cooperative boardgame about surviving a galatic trip back to Earth. Avaiable on TableTop Simulator!</span>}
-                    buttonLabel={<span>Soon at <Hatch text="HatchGames." /></span>}
-                    to="https://hatch.najjar.dev/games"
-                />
-                <NajjarProjectSection
-                    title={'Regent'}
-                    description={<span>My 1-player boardgame about surviving an fragile kingdom over 3 years until the legitimate heir is old enough to reign. </span>}
-                    buttonLabel={<span>Soon at <Hatch text="HatchGames." /></span>}
-                    backgroundColor={"#2B918A"}
-                    to="https://hatch.najjar.dev/games"
                 />
             </Section>
             <FutureProjects />

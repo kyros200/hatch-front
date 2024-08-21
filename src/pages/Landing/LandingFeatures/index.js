@@ -10,14 +10,20 @@ const LandingFeatures = () => {
             backgroundColor='#eeffee'
             className="landingFeaturesContainer"
         >
+            
             <div className="landingFeaturesContent">
                 <div className="left">
-                    <Hatch text="HatchGames." />
+                    <Hatch text="NajjarGames." />
                 </div>
                 <div className="right">
                     <div className='text'>
-                        BoardGame plataform to play in Real Time with friends. Everything developed by me.
+                        My Boardgames. I try to develop from scratch a server named <Hatch text="HatchGames." /> to play them!
                     </div>
+                    <Button
+                        to="/NajjarGames"
+                    >
+                        Check out <Hatch text="NajjarGames." />
+                    </Button>
                     <Button
                         to="/games"
                     >
@@ -25,19 +31,19 @@ const LandingFeatures = () => {
                     </Button>
                 </div>
             </div>
-            
+
             <div className="landingFeaturesContent">
                 <div className="left">
                     <Hatch text="NajjarProjects." />
                 </div>
                 <div className="right">
                     <div className='text'>
-                        Public projects with all kind of ideas. Sites, games, events and more.
+                        Public projects with all kind of ideas.
                     </div>
                     <Button
                         to="/NajjarProjects"
                     >
-                        Check out <Hatch text="NajjarProjects." /> page
+                        Check out <Hatch text="NajjarProjects." />
                     </Button>
                 </div>
             </div>

@@ -13,7 +13,7 @@ const FutureProjects = ({ title="Title", description, renderBottom, buttonLabel,
                     Future Ideas
                 </div>
                 <div className="subTitle">
-                    If I had time to develop everything I want, it would be a dream. This is a list of Projects of what I want to do next. It can be sites, games, everything. Here is what I think:
+                    If I had time to develop everything I want, it would be a dream. This is a list of Projects of what I want to do next:
                 </div>
                 <div className="dropDownContainer">
                     <DropDown 
@@ -44,20 +44,6 @@ const FutureProjects = ({ title="Title", description, renderBottom, buttonLabel,
                                 <br/>
                                 <div>
                                     <Hatch text="HatchCourse." /> will be integrated to <Hatch text="NajjarLogin." />, so it is expected to have a social aspect for the users to help each other and ways to follow your growth.
-                                </div>
-                            </div>
-                        }
-                    />
-                    <DropDown 
-                        title={"Element Gourmet"}
-                        content={
-                            <div>
-                                <div>
-                                    1-4 Board Game about being a Cook Wizard having a Food Truck. Prepare your Menu with the most bizarre and fantastic ingredients and be the most notourious Food Truck at the Fair!
-                                </div>
-                                <br/>
-                                <div>
-                                    Someday it'll be at <Hatch text="HatchGames." />, after Regent, Gaed and 3014.
                                 </div>
                             </div>
                         }

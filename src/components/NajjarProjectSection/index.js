@@ -1,4 +1,4 @@
-import Button from '../../../../components/shared/Button'
+import Button from '../shared/Button'
 import './NajjarProjectSection.scss'
 
 const NajjarProjectSection = ({ title="Title", description, renderBottom, buttonLabel, to, backgroundColor, className, classNameContent, ...rest}) => {

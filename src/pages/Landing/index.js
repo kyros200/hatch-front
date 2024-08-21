@@ -3,6 +3,7 @@ import LandingHatchDefinition from './LandingHatchDefinition'
 import LandingHatchMeaning from './LandingHatchMeaning'
 import LandingFeatures from './LandingFeatures'
 // import LandingEntries from './LandingEntries'
+// import LandingGames from './LandingGames'
 import AboutMe from './AboutMe'
 
 import './MainPage.scss';
