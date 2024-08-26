@@ -13,7 +13,7 @@ const FutureProjects = ({ title="Title", description, renderBottom, buttonLabel,
                     Future Ideas
                 </div>
                 <div className="subTitle">
-                    If I had time to develop everything I want, it would be a dream. This is a list of Projects of what I want to do next. It can be sites, games, everything. Here is what I think:
+                    If I had time to develop everything I want, it would be a dream. This is a list of Projects of what I want to do next. Here is what I think:
                 </div>
                 <div className="dropDownContainer">
                     <DropDown 

@@ -87,7 +87,6 @@ const NajjarGames = () => {
                     title={<img src={SGLogo} alt="Summa Gemma" />}
                     description={<span>Ad Perfectum. Summa Gemma is a game about refining gems until you make the perfect one.</span>}
                     buttonLabel={<span>Play it now on Tabletopia!</span>}
-                    // renderBottom={<>INSERT TABLETOPIA WIDGET HERE</>}
                     backgroundColor={"#2B912D"}
                     to="https://tabletopia.com/games/summa-gemma-wa69s1/play-now"
                     className="sg"
