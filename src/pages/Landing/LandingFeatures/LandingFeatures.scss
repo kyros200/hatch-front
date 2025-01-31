@@ -57,8 +57,18 @@
                 }
             }
 
-            >button {
-                margin-bottom: 16px;
+            >.button-container {
+                display: flex;
+                justify-content: space-evenly;
+                width: 100%;
+                
+                @media screen and (max-width: $mobile) {
+                    flex-direction: column;
+
+                    >button {
+                        margin-bottom: 16px;
+                    }
+                }
             }
         }
     }

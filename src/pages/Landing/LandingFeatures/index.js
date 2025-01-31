@@ -10,7 +10,6 @@ const LandingFeatures = () => {
             backgroundColor='#eeffee'
             className="landingFeaturesContainer"
         >
-            
             <div className="landingFeaturesContent">
                 <div className="left">
                     <Hatch text="NajjarGames." />
@@ -19,16 +18,18 @@ const LandingFeatures = () => {
                     <div className='text'>
                         My Boardgames. I try to develop from scratch a server named <Hatch text="HatchGames." /> to play them!
                     </div>
-                    <Button
-                        to="/NajjarGames"
-                    >
-                        Check out <Hatch text="NajjarGames." />
-                    </Button>
-                    <Button
-                        to="/games"
-                    >
-                        Go to <Hatch text="HatchGames." />
-                    </Button>
+                    <div className='button-container'>
+                        <Button
+                            to="https://games.najjar.dev"
+                        >
+                            Check out <Hatch text="NajjarGames." />
+                        </Button>
+                        <Button
+                            to="/games"
+                        >
+                            Go to <Hatch text="HatchGames." />
+                        </Button>
+                    </div>
                 </div>
             </div>
 
