@@ -21,6 +21,7 @@ const LandingFeatures = () => {
                     <div className='button-container'>
                         <Button
                             to="https://games.najjar.dev"
+                            target='_self'
                         >
                             Check out <Hatch text="NajjarGames." />
                         </Button>
