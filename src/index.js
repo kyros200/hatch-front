@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Landing from './pages/Landing';
 import NajjarProjects from './pages/NajjarProjects';
+import NajjarGames from './pages/NajjarGames';
 import Error from './pages/Error';
 import HatchGames from './pages/HatchGames';
 import PageLayout from './layouts/PageLayout';
@@ -34,6 +35,7 @@ ReactDOM.render(
           <Route path="/" element={<PageLayout />}>
             <Route index element={<Landing />} />
             <Route path="NajjarProjects" element={<NajjarProjects />} />
+            <Route path="NajjarGames" element={<NajjarGames />} />
             <Route path="error" element={<Error />} />
           </Route>
           <Route path="/games" element={<HatchGames />} />
